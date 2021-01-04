@@ -15,6 +15,14 @@ function AlgoritmVariativeRandom(){
 
 //--------------------------
 function randomArray(){
+
+/*
+    var random_variant = Math.round(Math.random()*(1));
+var data_spisok = ['0', '1', '2'];
+data[data_spisok[random_variant = Math.round(Math.random()*(3))]]
+
+*/
+
     var random_array_list = [];
     for (var i = 0; i <= 4; i++){  
             random_array_list[i] = data[i];
