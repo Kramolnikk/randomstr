@@ -1,0 +1,57 @@
+    .wrapper {
+        width: 80%;
+        height: 500px;
+        margin: 0 auto;
+        padding: 25px;
+        color: #eee;
+        background-color: #8c8c8c;
+        border: 1px solid #7c7c7c;
+        font-size: 1.1rem;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .panel-result, .panel-data {
+        width: 48%;    
+        padding: 10px;
+    }
+
+    .panel-result .result {
+        height: 200px;
+        overflow: auto;
+    }
+
+    .panel-button {
+        width: 100%;
+        padding: 25px;
+        text-align: end;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .panel-button span{
+        margin: 5px 5px;
+        width: 10%;
+    }
+
+    .panel-button button {        
+        padding: 15px 25px;
+        font-size: 1.2rem;    
+        background: #000;
+        color: #fff;
+        border: none;
+        transition: color, background-color 0.3s linear;
+    }
+
+    .panel-button button:hover {   
+        background: #fff ;
+        color: #000;
+    }
+
+    .panel-button button:active {   
+        padding: 14px 24px;
+    }
+    
+    select{
+        height: 75px;
+    }
