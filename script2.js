@@ -9,10 +9,8 @@ function displayMassiveContent(){
     document.getElementById("MassiveContent").innerHTML = data[document.getElementById("ListTem").value][1] + '<br>';
 }
 
+function AlgoritmVariativeRandom(){
 
-
-function displayMassiveContent(){
-    document.getElementById("MassiveContent").innerHTML = data[document.getElementById("ListTem").value][1] + '<br>';
 }
 
 //--------------------------
