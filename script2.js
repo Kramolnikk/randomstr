@@ -10,19 +10,27 @@ function displayMassiveContent(){
 }
 
 function AlgoritmVariativeRandom(){
+    var random_variant = Math.round(Math.random()*(2));
+    var data_spisok = [0, 4];
+    data_spisok[Math.round(Math.random()*(data_spisok.length-1))];
 
+    var konechnoe_govno = data_spisok[Math.round(Math.random()*(data_spisok.length-1))];
+
+
+    var tempStr = '';
+    var arrayLength;
+    let listTemVal = document.getElementById("ListTem").value;
+
+    for (var i = 1; i <= data[konechnoe_govno].length-1; i++){  
+        arrayLength = data[konechnoe_govno][i].length-1;
+        var randomElement = Math.round(Math.random()*arrayLength);
+        tempStr = tempStr + ' ' + data[konechnoe_govno][i][randomElement];
+    }
+    document.getElementById('result').innerHTML = tempStr;
 }
 
 //--------------------------
 function randomArray(){
-
-/*
-    var random_variant = Math.round(Math.random()*(1));
-var data_spisok = ['0', '1', '2'];
-data[data_spisok[random_variant = Math.round(Math.random()*(3))]]
-
-*/
-
     var random_array_list = [];
     for (var i = 0; i <= 4; i++){  
             random_array_list[i] = data[i];
