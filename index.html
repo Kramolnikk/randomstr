@@ -11,26 +11,26 @@
 <body onload="Constructor()">
     <div class="wrapper">
         <div class="panel-data">
-            <p class="array-result">Массив данных</p>
+            <p class="array-result">Выбранный массив данных содержит:</p>
             <div id="MassiveContent" class="array-result"></div>
         </div>
         <div class="panel-result">
-            <p class="array-result">Результат</p>
+            <p class="array-result">Результат генерации:</p>
             <div id="result" class="result"></div>
         </div>
-        <div class="panel-button">            
+        <div class="panel-button">
+            <span>
+            <button onclick="DisplayMassiveContent()">Показать</button>
+            </span>
            <select id="ListTem"></select>
             <span>
-                <button onclick="Algoritm1()">Алгоритм 1</button>
+                <button onclick="Algoritm1()">Алгоритм 1 (перебор)</button>
             </span>
             <span>
-                <button onclick="displayMassiveContent()">Показать</button>
+                <button onclick="AlgoritmFullRandom()">Больше рандома!</button>
             </span>
             <span>
-                <button onclick="Algoritm1Random()">Алгоритм рандом</button>
-            </span>
-            <span>
-                <button onclick="AlgoritmVariativeRandom()">Больше рандома!</button>
+                <button onclick="AlgoritmVariativeRandom()">Выборочный рандом</button>
             </span>
         </div>
     </div>

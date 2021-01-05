@@ -5,23 +5,25 @@ function Constructor(){
 	}
 }
 
-function displayMassiveContent(){
-    document.getElementById("MassiveContent").innerHTML = data[document.getElementById("ListTem").value][1] + '<br>';
+function DisplayMassiveContent(){
+    var DisplayArray = [];
+    for (var i = 0; i < data[document.getElementById("ListTem").value].length; i++){
+        DisplayArray[i] = data[document.getElementById("ListTem").value][i] + '<br><br>';
+    }
+    document.getElementById("MassiveContent").innerHTML = DisplayArray;
 }
 
 function AlgoritmVariativeRandom(){
-    var random_variant = Math.round(Math.random()*(2));
-    var data_spisok = [0, 4];
+    var data_spisok = [0, 4, 2];
+    var random_variant = Math.round(Math.random()*(data_spisok.length-1));
+    
     data_spisok[Math.round(Math.random()*(data_spisok.length-1))];
-
     var konechnoe_govno = data_spisok[Math.round(Math.random()*(data_spisok.length-1))];
-
-
     var tempStr = '';
     var arrayLength;
     let listTemVal = document.getElementById("ListTem").value;
 
-    for (var i = 1; i <= data[konechnoe_govno].length-1; i++){  
+    for (var i = 1; i <= data[konechnoe_govno].length-1; i++){
         arrayLength = data[konechnoe_govno][i].length-1;
         var randomElement = Math.round(Math.random()*arrayLength);
         tempStr = tempStr + ' ' + data[konechnoe_govno][i][randomElement];
@@ -29,28 +31,19 @@ function AlgoritmVariativeRandom(){
     document.getElementById('result').innerHTML = tempStr;
 }
 
-//--------------------------
-function randomArray(){
-    var random_array_list = [];
-    for (var i = 0; i <= 4; i++){  
-            random_array_list[i] = data[i];
-    }
-    return (random_array_list[Math.round(Math.random()*(random_array_list.length-1))]);
-}
-
 function Algoritm1(){
     var tempStr = '';
     var arrayLength;
     let listTemVal = document.getElementById("ListTem").value;
 
-    for (var i = 1; i <= data[listTemVal].length-1; i++){  
+    for (var i = 1; i <= data[listTemVal].length-1; i++){
         arrayLength = data[listTemVal][i].length-1;
         var randomElement = Math.round(Math.random()*arrayLength);
         tempStr = tempStr +/* ', ' +*/ ' ' + data[listTemVal][i][randomElement];
     }
     document.getElementById('result').innerHTML = tempStr;
 }
-
+/*
 function Algoritm2(){
     var arrayLength = data[listTemVal][1].length-1;
     var randomElement = Math.round(Math.random()*arrayLength);
@@ -62,16 +55,24 @@ function Algoritm2(){
     arrayLength = data[listTemVal][3].length-1;
     tempStr = tempStr  + ' ' + data[listTemVal][3][randomElement];
 }
-
-function Algoritm1Random(){
+*/
+function AlgoritmFullRandom(){
     var tempStr = '';
     var arrayLength;
     var targetArray;
     targetArray = randomArray();
-    for (var i = 1; i <= targetArray.length-1; i++){  
+    for (var i = 1; i <= targetArray.length-1; i++){
         arrayLength = targetArray[i].length-1;
         var randomElement = Math.round(Math.random()*arrayLength);
         tempStr = tempStr + ' ' + targetArray[i][randomElement];
     }
     document.getElementById('result').innerHTML = tempStr;
+}
+
+function randomArray(){
+    var random_array_list = [];
+    for (var i = 0; i <= 4; i++){
+            random_array_list[i] = data[i];
+    }
+    return (random_array_list[Math.round(Math.random()*(random_array_list.length-1))]);
 }
