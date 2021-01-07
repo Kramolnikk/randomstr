@@ -1,0 +1,77 @@
+body{
+    height: 100%;
+    width: 100%;
+    background-color: olive;
+    padding: 0px;
+    margin: 0px;
+}
+
+.scene {
+    height: 900px;
+    width: calc(100% - 200px);
+    display: block;
+    position: absolute;
+    left: 200px;
+}
+
+#main_menu {
+    position: absolute;
+    z-index: 2;
+    height: 900px;
+    width: 200px;
+    background-color: #555;
+}
+
+.div_button_mainmenu div{
+    height: 35px;
+    width: 176px;
+    margin: 1px 12px;
+    background-color: red;
+    background-image: url(img/Buttons/button_mainmemu.jpg);
+    background-size: 100%, 100%;
+}
+
+#continer_scene div{
+    display: none;
+}
+
+#scene_main{
+    background-color: white;
+    background-image: url(img/Backgrounds/map.png);
+    background-size: cover
+}
+
+#scene_home{
+    background-color: rgb(6, 187, 66);
+}
+
+#scene_city{
+    background-color: rgb(4, 138, 127);
+}
+
+#scene_lowtawn{
+    background-color: rgb(32, 4, 158);
+}
+
+#scene_book{
+    background-color: rgb(255, 212, 93);
+    
+}
+
+#scene_park{
+    background-color: rgb(0, 0, 0);
+}
+
+#scene_mimimi{
+    background-color: #ffc0cb;
+    background-image: url(img/backrounds/mimi.jpg);
+    background-size: cover;
+}
+
+#global_map{
+    background-color: #0b00a5;
+    background-image: url(img/map.png);
+    background-size: 120%, 100%;
+}
+
+#spel1{position: absolute;left: 100px;top: 200px;}
