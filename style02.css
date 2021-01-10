@@ -35,18 +35,19 @@ body{
     display: none;
 }
 
-#scene_main{
+#scene_home{
     background-color: white;
-    background-image: url(img/Backgrounds/map.png);
+    background-image: url(img/Backgrounds/room.jpg);
     background-size: cover
 }
 
-#scene_home{
+#scene_hero{
     background-color: rgb(6, 187, 66);
 }
 
-#scene_city{
+#scene_inventory{
     background-color: rgb(4, 138, 127);
+
 }
 
 #scene_lowtawn{
@@ -60,6 +61,8 @@ body{
 
 #scene_park{
     background-color: rgb(0, 0, 0);
+    background-image: url(img/Backgrounds/park.jpg);
+    background-size: cover;
 }
 
 #scene_mimimi{
@@ -70,8 +73,30 @@ body{
 
 #global_map{
     background-color: #0b00a5;
-    background-image: url(img/map.png);
-    background-size: 120%, 100%;
+
 }
 
+#scene_city{
+    background-color: rgb(4, 138, 127);
+    background-image: url(img/Backgrounds/map.png);
+    background-size: cover;
+}
+
+
+
 #spel1{position: absolute;left: 100px;top: 200px;}
+#openPC{position: absolute;left: 700px;top: 450px;
+    height: 35px;
+    width: 176px;
+    margin: 1px 12px;
+    background-image: url(img/Buttons/violet.png);
+    background-size: 100%, 50%;
+}
+
+#exit_city{position: absolute;left: 800px;top: 600px;
+    height: 35px;
+    width: 176px;
+    margin: 1px 12px;
+    background-image: url(img/Buttons/violet.png);
+    background-size: 100%, 50%;
+}
