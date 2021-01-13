@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- test 25.12.2020 -->
+<NewDataSet>
+	<RaceDB>
+
+		<Race>
+			<ID id="Race"></ID>
+			<DnDVersion></DnDVersion>
+			<Scource></Scource>
+			<Plane></Plane>
+			<Name>
+				<NameEN></NameEN>
+				<NameRU></NameRU>
+			</Name>
+			<About>
+				<EN></EN>
+				<RU></RU>
+			</About>
+			<Lore>
+				<EN></EN>
+				<RU></RU>
+			</Lore>
+			<MetaInf></MetaInf>
+		</Race>
+
+	</RaceDB>
+	
+	
+	
+	
+	
+	<ClassDB>
+		<Class>
+			<ID id="Class"></ID>
+			<DnDVersion></DnDVersion>
+			<Scource></Scource>
+			<Name>
+				<EN></EN>
+				<RU></RU>
+			</Name>
+			<About>
+				<EN></EN>
+				<RU></RU>
+			</About>
+			<Lore>
+				<EN></EN>
+				<RU></RU>
+			</Lore>
+			<MetaInf></MetaInf>
+		</Class>
+	</ClassDB>
+	
+	<MobDB>
+		
+		<Mob>
+			<Base>
+				<ID id="Mob">Bestiary_1_Rzhavnik</ID>
+				<DnDVersion>5</DnDVersion>
+				<Scource>Bestiary 1</Scource>
+				<Name>
+					<EN>Rust Monster</EN>
+					<RU>Ржавник</RU>
+				</Name>
+				<Plane>Main</Plane>
+				<MobRace>Monster</MobRace>
+				<Size>Medium</Size>
+				<Agro>none</Agro>
+				<CA>14</CA>
+				<HP>
+					<HP1>27</HP1>
+					<HP2>5</HP2>
+					<HP3>8</HP3>
+					<HP4>5</HP4>
+				</HP>
+				<Speed>40</Speed>
+				<PO>0,5</PO>
+				<XP>100</XP>
+				<TTH>
+					<STR>13</STR>
+					<DEX>12</DEX>
+					<CON>13</CON>
+					<INT>2</INT>
+					<WIS>13</WIS>
+					<CHA>6</CHA>
+				</TTH>
+			</Base>
+			<About>
+				<RU>
+					<Sens>
+						<1>Пассивное восприятие 10</1>
+						<2>Тёмное зрение 30 фт</2>
+					</Sens>
+					<Skill>
+						<1></1>
+					</Skill>
+					<OtherSkill>
+						<1>
+							<name>Нюх на металл</name>
+							<about>Ржавник может определить по запаху местонахождение содержащего железо металла в пределах 30 фт.</about>
+						</1>
+						<2>
+							<name>Коррозия металла</name>
+							<about>Любое немагическое оружие изготовленное из металла, попадающее по ржавнику, начинает разъедаться. После причинения урона оружие получаетпостоянный накопительный щтраф -1 к броскам урона. Если этот штраф дойдёт до -5, оружие будет уничтожено. Немагические боеприпасы, изготовленные из металла, попадающие по ржавнику, уничтожаются после причинения урона.</about>
+						</2>
+					</OtherSkill>
+					<Activity>
+						<1>
+							<name>Укус.</name>
+							<about>Рукопашная атака: +3 к попаданию</about>
+						</1>
+						<2>
+							<name>Антенны.</name>
+							<about>Ржавник разъедает немагический железосодержащий металлический предмет, видимый в пределах 5 фт. Если предмет никто не несёт и не носит, это касание уничтожает 1 его кубический фут.</about>
+						</2>
+					</Activity>
+				</RU>
+				<EN>
+				</EN>
+			</About>
+			<Lore>
+				<EN></EN>
+				<RU>Те, кто встретился с этим монстром хоть раз, едва ли захртят лишний раз упоминать о нём, темболее поведать о произошедшем, не опуская подробностей.</RU>
+			</Lore>
+			<MetaInf></MetaInf>
+		</Mob>
+		
+	</MobDB>
+	
+	<SubClassDB><!-- архитипы и прочее, с обязательным параметром чей подкласс -->
+		<SubClass>
+			<ID id="SubClass"></ID>
+			<DnDVersion></DnDVersion>
+			<Name>
+				<NameEN></NameEN>
+				<NameRU></NameRU>
+			</Name>
+			<About>
+				<AboutEN></AboutEN>
+				<AboutRU></AboutRU>
+			</About>
+			<Lore>
+				<LoreEN></LoreEN>
+				<LoreRU></LoreRU>
+			</Lore>
+			<MetaInf></MetaInf>
+		</SubClass>
+	</SubClassDB>
+	
+	<FeatDB>
+		<Feat>
+			<ID id="Feat"></ID>
+			<DnDVersion></DnDVersion>
+			<Name>
+				<NameEN></NameEN>
+				<NameRU></NameRU>
+			</Name>
+			<About>
+				<AboutEN></AboutEN>
+				<AboutRU></AboutRU>
+			</About>
+			<Lore>
+				<LoreEN></LoreEN>
+				<LoreRU></LoreRU>
+			</Lore>
+			<MetaInf></MetaInf>
+		</Feat>
+	</FeatDB>
+	
+	<AbilityDB>
+		<Ability>
+			<ID id="Ability"></ID>
+			<DnDVersion></DnDVersion>
+			<Name>
+				<NameEN></NameEN>
+				<NameRU></NameRU>
+			</Name>
+			<About>
+				<AboutEN></AboutEN>
+				<AboutRU></AboutRU>
+			</About>
+			<Lore>
+				<LoreEN></LoreEN>
+				<LoreRU></LoreRU>
+			</Lore>
+			<MetaInf></MetaInf>
+		</Ability>
+	</AbilityDB>
+	
+	<SpellDB>
+		<Spell>
+			<ID id="Spell"></ID>
+			<DnDVersion></DnDVersion>
+			<Name>
+				<NameEN></NameEN>
+				<NameRU></NameRU>
+			</Name>
+			<About>
+				<AboutEN></AboutEN>
+				<AboutRU></AboutRU>
+			</About>
+			<Lore>
+				<LoreEN></LoreEN>
+				<LoreRU></LoreRU>
+			</Lore>
+			<MetaInf></MetaInf>
+		</Spell>
+	</SpellDB>
+	
+	<PlayerBackgroundDB>
+		<PlayerBackground>
+			<ID id="PlayerBackground"></ID>
+			<DnDVersion></DnDVersion>
+			<Name>
+				<NameEN></NameEN>
+				<NameRU></NameRU>
+			</Name>
+			<About>
+				<AboutEN></AboutEN>
+				<AboutRU></AboutRU>
+			</About>
+			<Lore>
+				<LoreEN></LoreEN>
+				<LoreRU></LoreRU>
+			</Lore>
+			<MetaInf></MetaInf>
+		</PlayerBackground>
+	</PlayerBackgroundDB>
+
+	<ArmorDB>
+		<Armor>
+			<ID id="Armor"></ID>
+			<DnDVersion></DnDVersion>
+			<Name>
+				<NameEN></NameEN>
+				<NameRU></NameRU>
+			</Name>
+			<About>
+				<AboutEN></AboutEN>
+				<AboutRU></AboutRU>
+			</About>
+			<Lore>
+				<LoreEN></LoreEN>
+				<LoreRU></LoreRU>
+			</Lore>
+			<MetaInf></MetaInf>
+		</Armor>
+	</ArmorDB>
+	
+	<WeaponDB>
+		<Weapon>
+			<ID id="Weapon"></ID>
+			<DnDVersion></DnDVersion>
+			<Name>
+				<NameEN></NameEN>
+				<NameRU></NameRU>
+			</Name>
+			<About>
+				<AboutEN></AboutEN>
+				<AboutRU></AboutRU>
+			</About>
+			<Lore>
+				<LoreEN></LoreEN>
+				<LoreRU></LoreRU>
+			</Lore>
+			<MetaInf></MetaInf>
+		</Weapon>
+	</WeaponDB>
+	
+	<ItemDB>
+		<Item>
+			<ID id="Item"></ID>
+			<DnDVersion></DnDVersion>
+			<Name>
+				<NameEN></NameEN>
+				<NameRU></NameRU>
+			</Name>
+			<About>
+				<AboutEN></AboutEN>
+				<AboutRU></AboutRU>
+			</About>
+			<Lore>
+				<LoreEN></LoreEN>
+				<LoreRU></LoreRU>
+			</Lore>
+			<MetaInf></MetaInf>
+		</Item>
+	</ItemDB>
+	
+	<PlaneDB>
+		<Plane>
+			<ID id="Plane"></ID>
+			<DnDVersion></DnDVersion>
+			<Name>
+				<NameEN></NameEN>
+				<NameRU></NameRU>
+			</Name>
+			<About>
+				<AboutEN></AboutEN>
+				<AboutRU></AboutRU>
+			</About>
+			<Lore>
+				<LoreEN></LoreEN>
+				<LoreRU></LoreRU>
+			</Lore>
+			<MetaInf></MetaInf>
+		</Plane>
+	</PlaneDB>
+	
+	<WorldDB>
+		<World>
+			<ID id="World"></ID>
+			<DnDVersion></DnDVersion>
+			<Name>
+				<NameEN></NameEN>
+				<NameRU></NameRU>
+			</Name>
+			<About>
+				<AboutEN></AboutEN>
+				<AboutRU></AboutRU>
+			</About>
+			<Lore>
+				<LoreEN></LoreEN>
+				<LoreRU></LoreRU>
+			</Lore>
+			<MetaInf></MetaInf>
+		</World>
+	</WorldDB>
+</NewDataSet>

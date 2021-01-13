@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<NewDataSet>
+	<RaceDB>
+		<Race>
+			<ID id="Race"></ID>
+			<DnDVersion></DnDVersion>
+			<Scource></Scource>
+			<Plane></Plane>
+			<lang>
+				<EN>
+					<Name></Name>
+					<TTH>
+						<STR></STR>
+						<DEX></DEX>
+						<CON></CON>
+						<INT></INT>
+						<WIS></WIS>
+						<CHA></CHA>
+						<Variant></Variant>
+					</TTH>
+					<Skill></Skill>
+					<About></About>
+					<Lore></Lore>
+				</EN>
+				<RU>
+					<Name></Name>
+					<About></About>
+					<Lore></Lore>
+				</RU>
+			</lang>
+			<MetaInf></MetaInf>
+		</Race>
+	</RaceDB>
+</NewDataSet>
