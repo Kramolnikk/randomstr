@@ -1,24 +1,48 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="ru" xml:lang="ru">
+<html lang="en">
 <head>
-<title>Свиток в руках</title>
-<meta charset="utf-8" />
-<link rel="stylesheet" href="style/main/style01.css" />
-<script src="script/main/obolochka.js"></script>
-<script src="db/main/data_scroll.js"></script>
-<script src="script/script01.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+<link rel="stylesheet" href="style01.css" />
+    <script src="data.js"></script>
+    <script src="script2.js"></script>
+    <script src="script_J09.js"></script>
+    <script src="script_H00.js"></script>
 </head>
-<body>
-<div id="continer">
-	<div id="fon"></div>
-	<div id="svitok"></div>
-	<div id="mainmenu">
-		<div><a href="test form from G qvest.html">В приключение</a><div></div></div>
-		<div><a href="editor.html">База</a><div></div></div>
-		<div><span>Сжечь</span><div></div></div>
-		<div><span onclick="glagolvoice('glagol')">Говорящий свиток</span><div></div></div>
-		<div id="glagol" style="opacity: 0;">Некоторый текст</div>
-	</div>
-</div>
+<body onload="Constructor()">
+    <div class="wrapper">
+        <div class="panel-data">
+            <p class="array-result">Выбранный массив данных содержит:</p>
+            <div id="MassiveContent" class="array-result"></div>
+        </div>
+        <div class="panel-result">
+            <p class="array-result">Результат генерации:</p>
+            <div id="result" class="result"></div>
+        <div class="panel-result2">
+            <p class="array-result2">ответ:</p>
+            <div id="result2" class="result"></div>            
+
+        </div>
+        <div class="panel-button">
+            <span>
+            <button onclick="DisplayMassiveContent()">Показать</button>
+            </span>
+           <select id="ListTem"></select>
+            <span>
+                <button onclick="Algoritm1()">Алгоритм 1 (перебор)</button>
+            </span>
+            <span>
+                <button onclick="AlgoritmFullRandom()">Больше рандома!</button>
+            </span>
+            <span>
+                <button onclick="AlgoritmVariativeRandom()">Выборочный рандом</button>
+            </span>
+            <span>
+                <button onclick="AlgoritmVariativeRandom2()">Выборочный 2</button>
+            </span>
+        </div>
+    </div>
+
 </body>
 </html>
