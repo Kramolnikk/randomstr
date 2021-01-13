@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/editor/style02.css" />
+    <link rel="stylesheet" href="style/editor/style_menul_editor.css" />
+    <link rel="stylesheet" href="style/editor/form_race.css" />
+    <script src="script/editor/obolochka.js"></script>
+</head>
+<body onload="ConstructorScene()">
+    <div id="editor_red_menu">
+        <div id="button_red_menu" onclick="svich_lmenu_click(this)">Закрыть</div>
+        <div id="button_red_download" onclick="red_click()">Скачать</div>
+        <div id="button_red_inbd" onclick="red_click()">В БД</div>
+        <div id="button_red_lang" onclick="red_click()">Язык</div>
+        <div id="button_red_pre" onclick="red_click()">&lt;</div>
+        <div id="button_red_next" onclick="red_click()">&gt;</div>
+        <div id="button_red_list" onclick="red_click()">Список</div>
+        <div id="button_red_cabinet" onclick="red_click()">Кабинет</div>
+        <a href="index.html"><div id="button_red_exit" onclick="red_click()">Выход</div></a>
+    </div>
+    <div id="editor_menu">
+        <div onclick="button_display_screen(this, 0)">Расы</div>
+        <div onclick="button_display_screen(this, 1)">Подрасы</div>
+        <div onclick="button_display_screen(this, 2)">Классы</div>
+        <div onclick="button_display_screen(this, 3)">Архетипы</div>
+        <div onclick="button_display_screen(this, 4)">Способности</div>
+        <div onclick="button_display_screen(this, 5)">Черты</div>
+        <div onclick="button_display_screen(this, 6)">Заклинания</div>
+        <div onclick="button_display_screen(this, 7)">Предыстории</div>
+        <div onclick="button_display_screen(this, 8)">Монстры</div>
+        <div onclick="button_display_screen(this, 9)">НПС</div>
+        <div onclick="button_display_screen(this, 10)">Снаряжение</div>
+        <div onclick="button_display_screen(this, 11)">Предметы</div>
+        <div onclick="button_display_screen(this, 12)">Диалоги</div>
+    </div>
+    <div ><div id="hor_line"></div><div id="ver_line"></div></div>
+    <div id="continer_scene">
+        <div id="scene_race" class="scene">
+
+            <div class="list1 lmagelist wraplist"></div>
+            <div class="wraplist">
+                <span  class="scene_title">Раса:</span>
+                <input id='input_race_name'  class="input1">
+                <div id="wraprace_1">
+                    <input id="race_upload_json" type="file" onchange="showFile(this)" hidden>
+                    <!-- <input type='file' id="race_upload_json" style="display:none"> -->
+                    <button onclick="document.getElementById('race_upload_json').click()">Загрузить из файла</button>
+                    <label id=selected>Файл не выбран</label>
+                    <button id="race_upload_form">Из формы</button>
+                    <input type="text">
+                </div>
+            </div>
+            <div class="list2 lmagelist wraplist">
+            </div>
+        </div>
+
+        <div id="scene_subrace" class="scene">
+            <div class="list1 lmagelist wraplist"></div>
+            <div class="wraplist">
+                <span  class="scene_title">Подраса:</span>
+                <input id='input_subrace_name'  class="input1">
+            </div>
+            <div class="list2 lmagelist wraplist"> </div>
+        </div>
+        <div id="scene_class" class="scene">
+            <div class="list1 lmagelist wraplist"></div>
+            <div class="wraplist">
+                <span  class="scene_title">Класс:</span>
+                <input id='input_class_name'  class="input1">
+            </div>
+            <div class="list2 lmagelist wraplist"> </div>
+        </div>
+        <div id="scene_subclass" class="scene">
+            <div class="list1 lmagelist wraplist"></div>
+            <div class="wraplist">
+                <span  class="scene_title">Архетип:</span>
+                <input id='input_suclass_name'  class="input1">
+            </div>
+            <div class="list2 lmagelist wraplist"> </div>
+        </div>
+        <div id="scene_ability" class="scene">
+            <div class="list1 lmagelist wraplist"></div>
+            <div class="wraplist">
+                <span  class="scene_title">Способность:</span>
+                <input id='input_ability_name'  class="input1">
+            </div>
+            <div class="list2 lmagelist wraplist"> </div>
+        </div>
+        <div id="scene_feat" class="scene">
+            <div class="list1 lmagelist wraplist"></div>
+            <div class="wraplist">
+                <span  class="scene_title">Черта:</span>
+                <input id='input_feat_name'  class="input1">
+            </div>
+            <div class="list2 lmagelist wraplist"> </div>
+        </div>
+        <div id="scene_spell" class="scene">
+            <div class="list1 lmagelist wraplist"></div>
+            <div class="wraplist">
+                <span  class="scene_title">Заклинание:</span>
+                <input id='input_spell_name'  class="input1">
+            </div>
+            <div class="list2 lmagelist wraplist"> </div>
+        </div>
+        <div id="scene_story"  class="scene">
+            <div class="list1 lmagelist wraplist"></div>
+            <div class="wraplist">
+                <span  class="scene_title">Предыстория</span>
+                <input id='input_story_name'  class="input1">
+            </div>
+            <div class="list2 lmagelist wraplist"> </div>
+        </div>
+        <div id="scene_mob" class="scene">
+            <div class="list1 lmagelist wraplist"></div>
+            <div class="wraplist">
+                <span  class="scene_title">Монстр:</span>
+                <input id='input_mob_name'  class="input1">
+            </div>
+            <div class="list2 lmagelist wraplist"> </div>
+        </div>
+        <div id="scene_npc"  class="scene">
+            <div class="list1 lmagelist wraplist"></div>
+            <div class="wraplist">
+                <span  class="scene_title">НПС:</span>
+                <input id='input_npc_name'  class="input1">
+            </div>
+            <div class="list2 lmagelist wraplist"> </div>
+        </div>
+        <div id="scene_ammunition"  class="scene">
+            <div class="list1 lmagelist wraplist"></div>
+            <div class="wraplist">
+                <span  class="scene_title">Снаряжение:</span>
+                <input id='input_ammunition_name'  class="input1">
+            </div>
+            <div class="list2 lmagelist wraplist"> </div>
+        </div>
+        <div id="scene_item"  class="scene">
+            <div class="list1 lmagelist wraplist"></div>
+            <div class="wraplist">
+                <span  class="scene_title">Предмет:</span>
+                <input id='input_item_name'  class="input1">
+            </div>
+            <div class="list2 lmagelist wraplist"> </div>
+        </div>
+        <div id="scene_dialog"  class="scene">
+            <div class="list1 lmagelist wraplist"></div>
+            <div class="wraplist">
+                <span  class="scene_title">Диалог:</span>
+                <input id='input_dialog_name'  class="input1">
+            </div>
+            <div class="list2 lmagelist wraplist"> </div>
+        </div>
+    </div>
+</body>
+</html>
