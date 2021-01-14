@@ -90,24 +90,24 @@ a{
     color: #fff;
 }
 
-.firestep {
+.prefire {
     -webkit-filter: grayscale(100%);
     -moz-filter: grayscale(100%);
     -ms-filter: grayscale(100%);
     -o-filter: grayscale(100%);
     filter: grayscale(100%);
     filter: gray; /* IE 6-9 */
-    transition: all 2s ease-in-out;
+    transition: all 2.8s ease-in-out;
     -webkit-filter: grayscale(0%); 
     filter: grayscale(0%);
     opacity: 1;
   }
   
-.firestep2 {
+.firestep1 {
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%); 
   }
 
-.firestep3 {
+.firestep2 {
     opacity: 0;
   }
