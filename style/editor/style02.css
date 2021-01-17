@@ -6,8 +6,8 @@ body{
     padding: 0px;
     margin: 0px;
     font-family: 'Trebuchet MS', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
-	--button_height: 35px;
-	--button_margin_top: 2px;
+    --button_height: 35px;
+    --button_margin_top: 2px;
     --button_padding_top: 7px;
     --button_shift_top: -3px;
     --button_shift_left: 2px;}

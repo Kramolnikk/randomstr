@@ -48,7 +48,7 @@ function button_display_screen(target, b)
 if (selected_button) {selected_button.classList.remove('activity_button_menul');     selected_button.style.zIndex = '0';}
         /*******************************************/
 
-        /**********ВСПЛЫТИЕ АКТИВНОЙ КНОПКИ*********/
+        /**********ВСПЛЫТИЕ АКТИВНОЙ КНОПКИ*********//*
         let style = window.getComputedStyle;
         let top = style(target).top, left=style(target).left;
         top = parseInt(top);
@@ -62,13 +62,13 @@ if (selected_button) {selected_button.classList.remove('activity_button_menul');
             top = parseInt(top);
             left = style(selected_button).left;
             left = parseInt(left);
-            selected_button.style.top= top - shift_top + 'px';
-            selected_button.style.left= left - shift_left + 'px';
+            //selected_button.style.top= top - shift_top + 'px';
+            //selected_button.style.left= left - shift_left + 'px';
         }
         else
         {
             selected_button = target;
-        }
+        }*/
         /*******************************************/
         selected_button = target;
     }

@@ -34,13 +34,16 @@
     background-size: 100%, 100%;
     margin: 2px 2px 2px 3px;
     position: absolute;
-    }
+    transition: margin-top 0.01s;}
 
 .activity_button_menul{
     color: white;
     background-color: #5a6700 !important;
     outline: none !important;
-    box-shadow: -3px 5px 4px rgba(0,0,0,0.75);}
+    box-shadow: -3px 5px 4px rgba(0,0,0,0.75);
+    margin-top: -0px !important;
+    margin-left: 6px !important;
+    z-index: 1 !important;}
 
 #editor_red_menu div, #editor_menu div{
     height: calc(var(--button_height) - var(--button_padding_top));

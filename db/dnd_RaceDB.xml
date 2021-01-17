@@ -6,29 +6,30 @@
 			<DnDVersion></DnDVersion>
 			<Scource></Scource>
 			<Plane></Plane>
+			<MetaInf></MetaInf>
+			<TTH>
+				<STR></STR>
+				<DEX></DEX>
+				<CON></CON>
+				<INT></INT>
+				<WIS></WIS>
+				<CHA></CHA>
+				<Variant></Variant>
+			</TTH>
 			<lang>
 				<EN>
 					<Name></Name>
-					<TTH>
-						<STR></STR>
-						<DEX></DEX>
-						<CON></CON>
-						<INT></INT>
-						<WIS></WIS>
-						<CHA></CHA>
-						<Variant></Variant>
-					</TTH>
 					<Skill></Skill>
 					<About></About>
 					<Lore></Lore>
 				</EN>
 				<RU>
 					<Name></Name>
+					<Skill></Skill>
 					<About></About>
 					<Lore></Lore>
 				</RU>
 			</lang>
-			<MetaInf></MetaInf>
 		</Race>
 	</RaceDB>
 </NewDataSet>
