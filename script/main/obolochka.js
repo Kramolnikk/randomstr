@@ -1,22 +1,18 @@
 function glagolvoice(idel){
   var el = document.getElementById(idel);
-  var t = 70;
-    if (orderVoice)
-    {
-      textgen(idel);
-      opacityFun(el, t);
-    } {}
+      if (el.style.opacity == 0){
+        text_scroll(el);
+        opacity0Fun(idel);
+    }
 }
 
-function textgen(idel){
+function text_scroll(el){
     var tempStr;
     var arrayLength1 = data_scroll_voice[0].length-1;
     var arrayLength2 = data_scroll_voice[1].length-1;
-
     tempStr = data_scroll_voice[0][Math.round(Math.random()*arrayLength1)];
     tempStr += data_scroll_voice[1][Math.round(Math.random()*arrayLength2)] + '...';
-
-    document.getElementById(idel).innerHTML = tempStr;
+    el.innerHTML = tempStr;
 }
 
 function fire(){

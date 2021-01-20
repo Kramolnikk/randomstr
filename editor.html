@@ -1,42 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
+    <title>Редактор</title>
     <link rel="stylesheet" href="style/editor/style02.css" />
     <link rel="stylesheet" href="style/editor/style_menul_editor.css" />
     <link rel="stylesheet" href="style/editor/form_race.css" />
+    <script src="script/script01.js"></script>
     <script src="script/editor/obolochka.js"></script>
 </head>
 <body onload="ConstructorScene()">
-    <div id="editor_red_menu">
-        <div id="button_red_menu" onclick="svich_lmenu_click(this)">Закрыть</div>
-        <div id="button_red_download" onclick="red_click()">Скачать</div>
-        <div id="button_red_inbd" onclick="red_click()">В БД</div>
-        <div id="button_red_lang" onclick="red_click()">Язык</div>
-        <div id="button_red_pre" onclick="red_click()">&lt;</div>
-        <div id="button_red_next" onclick="red_click()">&gt;</div>
-        <div id="button_red_list" onclick="red_click()">Список</div>
-        <div id="button_red_cabinet" onclick="red_click()">Кабинет</div>
-        <a href="index.html"><div id="button_red_exit" onclick="red_click()">Выход</div></a>
+    <div>
+        <div id="editor_red_menu">
+            <div id="button_red_menu" onclick="svich_display_click('wrap_menu',this)">Закрыть</div>
+            <div id="button_red_download" onclick="red_click()">Скачать</div>
+            <div id="button_red_inbd" onclick="red_click()">В БД</div>
+            <div id="button_red_lang" onclick="red_click()">Язык</div>
+            <div id="button_red_pre" onclick="red_click()">&lt;</div>
+            <div id="button_red_next" onclick="red_click()">&gt;</div>
+            <div id="button_red_list" onclick="red_click()">Список</div>
+            <div id="button_red_cabinet" onclick="red_click()">Кабинет</div>
+            <a href="index.html"><div id="button_red_exit" onclick="red_click_exit()">Выход</div></a>
+        </div>
+        <div id="hor_line"></div>
     </div>
-    <div id="editor_menu">
-        <div onclick="button_display_screen(this, 0)">Расы</div>
-        <div onclick="button_display_screen(this, 1)">Подрасы</div>
-        <div onclick="button_display_screen(this, 2)">Классы</div>
-        <div onclick="button_display_screen(this, 3)">Архетипы</div>
-        <div onclick="button_display_screen(this, 4)">Способности</div>
-        <div onclick="button_display_screen(this, 5)">Черты</div>
-        <div onclick="button_display_screen(this, 6)">Заклинания</div>
-        <div onclick="button_display_screen(this, 7)">Предыстории</div>
-        <div onclick="button_display_screen(this, 8)">Монстры</div>
-        <div onclick="button_display_screen(this, 9)">НПС</div>
-        <div onclick="button_display_screen(this, 10)">Снаряжение</div>
-        <div onclick="button_display_screen(this, 11)">Предметы</div>
-        <div onclick="button_display_screen(this, 12)">Диалоги</div>
+    <div id="wrap_menu">
+        <div id="editor_menu">
+            <div onclick="button_display_screen(this, 0)">Расы</div>
+            <div onclick="button_display_screen(this, 1)">Подрасы</div>
+            <div onclick="button_display_screen(this, 2)">Классы</div>
+            <div onclick="button_display_screen(this, 3)">Архетипы</div>
+            <div onclick="button_display_screen(this, 4)">Способности</div>
+            <div onclick="button_display_screen(this, 5)">Черты</div>
+            <div onclick="button_display_screen(this, 6)">Заклинания</div>
+            <div onclick="button_display_screen(this, 7)">Предыстории</div>
+            <div onclick="button_display_screen(this, 8)">Монстры</div>
+            <div onclick="button_display_screen(this, 9)">НПС</div>
+            <div onclick="button_display_screen(this, 10)">Снаряжение</div>
+            <div onclick="button_display_screen(this, 11)">Предметы</div>
+            <div onclick="button_display_screen(this, 12)">Диалоги</div>
+        </div>
+        <div id="ver_line"></div>
     </div>
-    <div ><div id="hor_line"></div><div id="ver_line"></div></div>
     <div id="continer_scene">
         <div id="scene_race" class="scene">
 
@@ -146,12 +152,8 @@
             <div class="list2 lmagelist wraplist"> </div>
         </div>
         <div id="scene_dialog"  class="scene">
-            <div class="list1 lmagelist wraplist"></div>
-            <div class="wraplist">
-                <span  class="scene_title">Диалог:</span>
-                <input id='input_dialog_name'  class="input1">
-            </div>
-            <div class="list2 lmagelist wraplist"> </div>
+            <span  class="scene_title">Диалог:</span>
+            <textarea class="dialog_edit1"></textarea>
         </div>
     </div>
 </body>

@@ -12,25 +12,6 @@ body{
     --button_shift_top: -3px;
     --button_shift_left: 2px;}
 
-#ver_line{
-    min-height: 700px;
-    height: calc(100% - 39px);
-    width: 1px;
-    margin-top: 39px;
-    background-color: black;
-    position: absolute;
-    left: 115px;
-    z-index: 0;}
-
-#hor_line{
-    height: 1px;
-    width: 100%;
-    min-width: 900px;
-    background-color: black;
-    position: absolute;
-    top: 39px;
-    z-index: 0;}
-
 .scene {
     /*height: 100%;
     width: calc(100% - 136px);*/

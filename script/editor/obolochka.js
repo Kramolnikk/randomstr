@@ -1,5 +1,5 @@
 "use strict"
-var menul_editor;
+var wrap_menu;
 var menul_editor_button;
 var scene;
 var selected_button;
@@ -7,26 +7,12 @@ var filerace;
 
 function ConstructorScene()
 {
-    menul_editor = document.getElementById('editor_menu');
+    wrap_menu = document.getElementById('wrap_menu');
     menul_editor_button = document.getElementById('editor_menu').getElementsByTagName('div');
-    scene = document.getElementById('continer_scene').getElementsByClassName('scene');
+    scene = document.getElementsByClassName('scene');
     button_display_screen(menul_editor_button[0], 0);
     filerace = document.getElementById("race_upload_json").files;
     document.getElementById("selected").innerHTML = (filerace[0]) ? filerace[0].name : 'Файл не выбран';
-}
-
-function svich_lmenu_click(a)
-{
-    if (menul_editor.style.display == 'none')
-    {
-        menul_editor.style.display = 'block';
-        a.innerHTML = 'Закрыть';
-    }
-    else
-    {
-        menul_editor.style.display = 'none';
-        a.innerHTML = 'Меню';
-    }
 }
 
 function button_display_screen(target, b)
@@ -40,12 +26,11 @@ function button_display_screen(target, b)
             scene[i].style.display = 'none';
         }
         scene[b].style.display = 'block';
-        //alert(scene[b].style.display)
         /*******************************************/
 
         /***********КРАСИМ АКТИВНУЮ КНОПКУ**********/
         target.classList.add('activity_button_menul');
-if (selected_button) {selected_button.classList.remove('activity_button_menul');     selected_button.style.zIndex = '0';}
+        if (selected_button) {selected_button.classList.remove('activity_button_menul');     selected_button.style.zIndex = '0';}
         /*******************************************/
 
         /**********ВСПЛЫТИЕ АКТИВНОЙ КНОПКИ*********//*
@@ -68,7 +53,7 @@ if (selected_button) {selected_button.classList.remove('activity_button_menul');
         else
         {
             selected_button = target;
-        }*/
+        }*/ 
         /*******************************************/
         selected_button = target;
     }
@@ -76,6 +61,10 @@ if (selected_button) {selected_button.classList.remove('activity_button_menul');
 }
 
 function red_click(){
+}
+
+function red_click_exit(){
+
 }
 
 var abc;
@@ -88,7 +77,6 @@ function showFile(input)
         document.getElementById("selected").innerHTML = f0.name;
     }
     show_getfile(file);
-
 }
 
 var x;

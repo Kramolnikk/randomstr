@@ -53,28 +53,25 @@ body{
     height:1px;
     width:248px;
     display:block;
-    background-image:url("../../img/main/LineMenu.png");}
+    background-image:url("../../img/main/LineMenu.png");
+    z-index: -1;}
 
 #mainmenu div:hover div{
         display:block;}
 
 a{
     text-decoration: none;
-    color: black;
-}
+    color: black;}
 
 #mainmenu div span{
-    cursor: pointer;
-}
+    cursor: pointer;}
 
 #glagol{
     position: relative;
     margin-left: -10px;
     margin-top: 5px;
     width:300px !important;
-    font-size: 16px !important;
-
-}
+    font-size: 16px !important;}
 
 .absvgd:hover{
     -webkit-transition: color .2s ease-in-out ;
@@ -87,12 +84,10 @@ a{
     -ms-transition-delay: .2s;
     -o-transition-delay: .2s;
     transition-delay: .2s;
-    color: #fff;
-}
+    color: #fff;}
 
 .prefire {
     -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
     -ms-filter: grayscale(100%);
     -o-filter: grayscale(100%);
     filter: grayscale(100%);
@@ -100,14 +95,11 @@ a{
     transition: all 2.8s ease-in-out;
     -webkit-filter: grayscale(0%); 
     filter: grayscale(0%);
-    opacity: 1;
-  }
+    opacity: 1;}
   
 .firestep1 {
     -webkit-filter: grayscale(100%);
-    filter: grayscale(100%); 
-  }
+    filter: grayscale(100%);}
 
 .firestep2 {
-    opacity: 0;
-  }
+    opacity: 0;}

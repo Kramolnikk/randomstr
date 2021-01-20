@@ -5,11 +5,28 @@
     width: 100%;
     min-width: 900px;}
 
+#hor_line{
+    position: absolute;
+    top: 39px;
+    height: 1px;
+    width: 100%;
+    min-width: 900px;
+    background-color: black;}
+
 #editor_menu {
-    min-height: 700px;
+    min-height: 740px;
     width: 115px;
     top: 40px;
     height: calc(100% - 40px);}
+
+#ver_line{
+    position: absolute;
+    left: 115px;
+    min-height: 740px;
+    height: calc(100% - 40px);
+    width: 1px;
+    top: 40px;
+    background-color: black;}
 
 #editor_red_menu, #editor_menu{
     position: absolute;
@@ -34,7 +51,7 @@
     background-size: 100%, 100%;
     margin: 2px 2px 2px 3px;
     position: absolute;
-    transition: margin-top 0.01s;}
+    /*transition: margin-top 0.01s;*/}
 
 .activity_button_menul{
     color: white;
