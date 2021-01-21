@@ -2,22 +2,22 @@
 
 body{
     margin: 0px;
-    height: 100%;
-}
+    height: 100%;}
 
 #continer{
     margin: 0px auto;
     display: block;
-    width: 1px;
-}
+    width: 1px;}
+
+#fon, #svitok, #mainmenu{ /*не "#continer div" - для совместимости с ie*/
+    transition: all 2.8s ease-in-out;}
 
 #fon{
     position: absolute;
     width: 597px;
     height: 738px;
     margin-left: -289px;
-    background-image: url("../../img/main/fon.jpg");
-}
+    background-image: url("../../img/main/fon.jpg");}
 
 #svitok{
     position: absolute;
@@ -25,16 +25,13 @@ body{
     margin-left: -252px;
     width: 524px;
     height: 615px;
-    background-image: url("../../img/main/svitok.png");
-}
+    background-image: url("../../img/main/svitok.png");}
 
 #mainmenu{
     position: absolute;
     margin-top: 200px;
     margin-left: -130px;
-    width: 200px;
-    
-}
+    width: 200px;}
 
 #mainmenu div{
     height: 71px;
@@ -43,28 +40,23 @@ body{
     font-family: 'Times New Roman', Times, serif;
     font-size: 21pt;
     font-style: italic;
-    user-select: none;
-}
+    user-select: none;}
 
 #mainmenu div div{
-    position:absolute;
     margin-top:-5px;
     margin-left:15px;
     height:1px;
     width:248px;
     display:block;
-    background-image:url("../../img/main/LineMenu.png");
-    z-index: -1;}
-
-#mainmenu div:hover div{
-        display:block;}
+    background-image:url("../../img/main/LineMenu.png");}
 
 a{
     text-decoration: none;
     color: black;}
 
 #mainmenu div span{
-    cursor: pointer;}
+    cursor: pointer;
+    z-index: 1;}
 
 #glagol{
     position: relative;
@@ -73,33 +65,8 @@ a{
     width:300px !important;
     font-size: 16px !important;}
 
-.absvgd:hover{
-    -webkit-transition: color .2s ease-in-out ;
-    -moz-transition: color .2s ease-in-out;
-    -ms-transition: color .2s ease-in-out;
-    -o-transition: color .2s ease-in-out;
-    transition: color .2s ease-in-out;
-    -webkit-transition-delay: .2s;
-    -moz-transition-delay: .2s;
-    -ms-transition-delay: .2s;
-    -o-transition-delay: .2s;
-    transition-delay: .2s;
-    color: #fff;}
-
-.prefire {
-    -webkit-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    -o-filter: grayscale(100%);
-    filter: grayscale(100%);
-    filter: gray; /* IE 6-9 */
-    transition: all 2.8s ease-in-out;
-    -webkit-filter: grayscale(0%); 
-    filter: grayscale(0%);
-    opacity: 1;}
-  
 .firestep1 {
-    -webkit-filter: grayscale(100%);
-    filter: grayscale(100%);}
+}
 
 .firestep2 {
     opacity: 0;}
