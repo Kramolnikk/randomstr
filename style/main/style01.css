@@ -66,6 +66,12 @@ a{
     font-size: 16px !important;}
 
 .firestep1 {
+    -webkit-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: grayscale(1);
+    filter: gray; /* IE 6-9 */
 }
 
 .firestep2 {
