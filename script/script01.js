@@ -32,9 +32,9 @@ function opacity0Fun(idel, t){
 
 }
 
-function svich_display_click(_el,a)
+function svich_display_click(_el, a)
 {
-    let el = document.getElementById(_el);
+    var el = document.getElementById(_el);
     if (el.style.display == 'none')
     {
         el.style.display = 'block';
