@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style/editor/style02.css" />
     <link rel="stylesheet" href="style/editor/style_menul_editor.css" />
     <link rel="stylesheet" href="style/editor/form_race.css" />
+    <link rel="stylesheet" href="style/editor/dialog.css" />
     <script src="script/script01.js"></script>
     <script src="script/editor/obolochka.js"></script>
 </head>
@@ -26,6 +27,7 @@
         <div id="hor_line"></div>
     </div>
     <div id="wrap_menu">
+        <div id="ver_line"></div>
         <div id="editor_menu">
             <div onclick="button_display_screen(this, 0)">Расы</div>
             <div onclick="button_display_screen(this, 1)">Подрасы</div>
@@ -41,11 +43,10 @@
             <div onclick="button_display_screen(this, 11)">Предметы</div>
             <div onclick="button_display_screen(this, 12)">Диалоги</div>
         </div>
-        <div id="ver_line"></div>
     </div>
     <div id="continer_scene">
         <div id="scene_race" class="scene">
-
+            <div id="" class="menu_scene"></div>
             <div class="list1 lmagelist wraplist"></div>
             <div class="wraplist">
                 <span  class="scene_title">Раса:</span>
@@ -64,6 +65,7 @@
         </div>
 
         <div id="scene_subrace" class="scene">
+            <div id="" class="menu_scene"></div>
             <div class="list1 lmagelist wraplist"></div>
             <div class="wraplist">
                 <span  class="scene_title">Подраса:</span>
@@ -72,6 +74,7 @@
             <div class="list2 lmagelist wraplist"> </div>
         </div>
         <div id="scene_class" class="scene">
+            <div id="" class="menu_scene"></div>
             <div class="list1 lmagelist wraplist"></div>
             <div class="wraplist">
                 <span  class="scene_title">Класс:</span>
@@ -80,6 +83,7 @@
             <div class="list2 lmagelist wraplist"> </div>
         </div>
         <div id="scene_subclass" class="scene">
+            <div id="" class="menu_scene"></div>
             <div class="list1 lmagelist wraplist"></div>
             <div class="wraplist">
                 <span  class="scene_title">Архетип:</span>
@@ -88,6 +92,7 @@
             <div class="list2 lmagelist wraplist"> </div>
         </div>
         <div id="scene_ability" class="scene">
+            <div id="" class="menu_scene"></div>
             <div class="list1 lmagelist wraplist"></div>
             <div class="wraplist">
                 <span  class="scene_title">Способность:</span>
@@ -96,6 +101,7 @@
             <div class="list2 lmagelist wraplist"> </div>
         </div>
         <div id="scene_feat" class="scene">
+            <div id="" class="menu_scene"></div>
             <div class="list1 lmagelist wraplist"></div>
             <div class="wraplist">
                 <span  class="scene_title">Черта:</span>
@@ -104,6 +110,7 @@
             <div class="list2 lmagelist wraplist"> </div>
         </div>
         <div id="scene_spell" class="scene">
+            <div id="" class="menu_scene"></div>
             <div class="list1 lmagelist wraplist"></div>
             <div class="wraplist">
                 <span  class="scene_title">Заклинание:</span>
@@ -112,6 +119,7 @@
             <div class="list2 lmagelist wraplist"> </div>
         </div>
         <div id="scene_story"  class="scene">
+            <div id="" class="menu_scene"></div>
             <div class="list1 lmagelist wraplist"></div>
             <div class="wraplist">
                 <span  class="scene_title">Предыстория</span>
@@ -120,6 +128,7 @@
             <div class="list2 lmagelist wraplist"> </div>
         </div>
         <div id="scene_mob" class="scene">
+            <div id="" class="menu_scene"></div>
             <div class="list1 lmagelist wraplist"></div>
             <div class="wraplist">
                 <span  class="scene_title">Монстр:</span>
@@ -128,6 +137,7 @@
             <div class="list2 lmagelist wraplist"> </div>
         </div>
         <div id="scene_npc"  class="scene">
+            <div id="" class="menu_scene"></div>
             <div class="list1 lmagelist wraplist"></div>
             <div class="wraplist">
                 <span  class="scene_title">НПС:</span>
@@ -136,6 +146,7 @@
             <div class="list2 lmagelist wraplist"> </div>
         </div>
         <div id="scene_ammunition"  class="scene">
+            <div id="" class="menu_scene"></div>
             <div class="list1 lmagelist wraplist"></div>
             <div class="wraplist">
                 <span  class="scene_title">Снаряжение:</span>
@@ -144,6 +155,7 @@
             <div class="list2 lmagelist wraplist"> </div>
         </div>
         <div id="scene_item"  class="scene">
+            <div id="" class="menu_scene"></div>
             <div class="list1 lmagelist wraplist"></div>
             <div class="wraplist">
                 <span  class="scene_title">Предмет:</span>
@@ -152,6 +164,13 @@
             <div class="list2 lmagelist wraplist"> </div>
         </div>
         <div id="scene_dialog"  class="scene">
+            <div id="" class="menu_scene">
+                <span>кнопка 1</span>
+                <span>кнопка 2</span>
+                <span>кнопка 3</span>
+                <span>кнопка 4</span>
+                <span>кнопка 5</span>
+            </div>
             <span  class="scene_title">Диалог:</span>
             <textarea class="dialog_edit1"></textarea>
         </div>

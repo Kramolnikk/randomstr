@@ -13,11 +13,26 @@
     min-width: 900px;
     background-color: black;}
 
+.wraplist{
+    display: block !important;
+    position: absolute;
+    width: var(--SizeWImgList);
+    height: var(--SizeHImgList);
+    padding: 0px !important;
+    background-color: transparent !important;
+    border-width:1px;
+    border-color:grey;
+    z-index: 1}
+
+#wrap_menu{
+    z-index: 1;}
+
 #editor_menu {
     min-height: 740px;
     width: 115px;
     top: 40px;
-    height: calc(100% - 40px);}
+    height: calc(100% - 40px);
+    z-index: 1;}
 
 #ver_line{
     position: absolute;
@@ -26,11 +41,11 @@
     height: calc(100% - 40px);
     width: 1px;
     top: 40px;
+    z-index: 1;
     background-color: black;}
 
 #editor_red_menu, #editor_menu{
     position: absolute;
-    z-index: 1;
     background-color: rgb(202, 202, 202);
     font-size: 17px;
     user-select: none;
@@ -57,7 +72,7 @@
     color: white;
     background-color: #5a6700 !important;
     outline: none !important;
-    box-shadow: -3px 5px 4px rgba(0,0,0,0.75);
+    box-shadow: -3px 8px 4px rgba(0,0,0,0.75);
     margin-top: -0px !important;
     margin-left: 6px !important;
     z-index: 1 !important;}
@@ -69,8 +84,6 @@
     padding-top: var(--button_padding_top);}
 
 #editor_menu div:hover{
-    /*outline:2px solid #758033;
-    outline-offset:-1px;*/
     background-color: #a8a8a8;
     cursor: pointer;}
 
@@ -78,8 +91,28 @@
     cursor: pointer;}
 
 #editor_red_menu div:active {
-    box-shadow: inset -3px 4px 4px rgba(0,0,0,0.75);
-    }
+    box-shadow: inset -3px 4px 4px rgba(0,0,0,0.75);}
+
+.menu_scene{
+    position: absolute;
+    left: -116px;
+    min-height: 740px;
+    width: 115px;
+    height: 100%;
+    background-color: rgb(170, 26, 26);
+    font-size: 17px;
+    user-select: none;
+    text-align: center;}
+
+.menu_scene span{
+    cursor: pointer;
+    display: block;
+    height: 21px;
+    padding-top:4px;
+    font-size: 14px !important;}
+
+.menu_scene span:hover{
+background-color: rgba(255,255,255,0.1);}
 
 #editor_menu div:nth-child(1){
     top: calc((var(--button_height) + var(--button_margin_top)) * 0)

@@ -19,7 +19,7 @@ body{
     position: absolute;
     top: 40px;
     left: 116px;
-    z-index: 2;
+    z-index: 0;
     --SizeWImgList: 561px;
     --SizeHImgList: 745px;}
 /*
@@ -33,16 +33,6 @@ body{
     z-index: 0;
     background-size: cover;}
 
-.wraplist{
-    display: block !important;
-    position: absolute;
-    width: var(--SizeWImgList);
-    height: var(--SizeHImgList);
-    padding: 0px !important;
-    background-color: transparent !important;
-    border-width:1px;
-    border-color:grey;}
-
 .list1{
     transform: scale(-1, 1);}
 
@@ -55,9 +45,7 @@ body{
     left: 180px;
 	position: absolute;
     font-size: 26px;
-    
-    z-index: 1;
-    }
+    z-index: 1;    }
 
 #continer_scene div button{
     display:block;
@@ -70,8 +58,7 @@ body{
     color:white;
     padding:0 5px;
     font-family:Trebuchet MS;
-    border:0;
-}
+    border:0;}
 
 #continer_scene div button:hover{
     /*background:#0aa;*/
@@ -89,5 +76,4 @@ body{
 
 a{
     text-decoration: none;
-    color: black;
-}
+    color: black;}
