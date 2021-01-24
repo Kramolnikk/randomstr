@@ -46,7 +46,7 @@
 
 #editor_red_menu, #editor_menu{
     position: absolute;
-    background-color: rgb(202, 202, 202);
+    background-color: rgb(153, 153, 153);
     font-size: 17px;
     user-select: none;
     /*! margin-top: 20px; */}
@@ -62,7 +62,7 @@
 
 #editor_menu div{
     box-sizing: content-box;
-    background-color: rgb(153, 153, 153);
+    background-color: rgb(182, 182, 182);
     background-size: 100%, 100%;
     margin: 2px 2px 2px 3px;
     position: absolute;

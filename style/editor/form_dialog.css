@@ -29,6 +29,11 @@
     height: 20px;
     background-color: #009700;
     text-align: center;
+    user-select: none;
+}
+
+.dialog_bt1:active{
+    background-color: #008000;
 }
 
 #dialog_bt_ar_name0, #dialog_bt_ar_name{
@@ -93,6 +98,11 @@
 
 .label_kartochka_1, .label_kartochka_2{
     margin-top: -4px;
+    margin-left: 2px;
+}
+
+#span_dialog_6{
+    margin-left: 2px;
 }
 
 #span_dialog_6, .label_kartochka_1{
