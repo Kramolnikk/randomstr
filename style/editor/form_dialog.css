@@ -1,0 +1,139 @@
+.scene_edit{
+    position: absolute;
+    width: 360px;
+    /*width: 22px;*/
+    left: 131px;
+    background-color: #daa;
+}
+
+#dialog_edit_ar_name, #span_dialog_1{
+    top: 7px;
+    width: 179px;
+}
+
+#dialog_edit_ar_meta, #span_dialog_2{
+    top: 30px;
+}
+
+#dialog_edit_subar_name, #span_dialog_3{
+    top: 56px;
+}
+
+#dialog_edit_subar_meta, #span_dialog_4{
+    top: 79px;
+}
+
+.dialog_bt1{
+    position: absolute;
+    width: 179px;
+    height: 20px;
+    background-color: #009700;
+    text-align: center;
+}
+
+#dialog_bt_ar_name0, #dialog_bt_ar_name{
+    left: 318px;
+    top: 7px;
+}
+
+#dialog_bt_subar_add{
+    left: 318px;}
+
+#dialog_bt_add{
+    left: 132px;}
+
+#dialog_bt_subar_add, #dialog_bt_add, #span_dialog_5{
+    top: 103px;}
+
+.dialog_textarea{
+    position: absolute;
+    width: 488px;
+    height: 308px;
+    top: 125px;
+    resize: none;
+    left: 4px;}
+
+.label{
+    position: absolute;
+    display: block;
+    width: 130px;
+    left: 6px;}
+
+#dialog_line1{
+    position: absolute;
+    height: 1px;
+    width: 496px;
+    top: 53px;
+    background-color: black;}
+/*================  ПРАВАЯ ЧАСТЬ  ===================*/
+#prev_ar{
+    position: absolute;
+    height: 750px;
+    width: 476px;
+    left: 809px;
+    border: 2px solid black;}
+
+.prev_kartochka{
+    position: absolute;
+    width: 476px;
+    height: 200px;
+    background-color: #dfdfdf;
+    margin-bottom: 3px;
+}
+
+#dialog_select_ar_name{
+    position: absolute;
+    left: 104px;
+    width: 248px;
+}
+
+#dialog_select_ar_name, #span_dialog_6, #span_dialog_7, .label_kartochka_1, .label_kartochka_2{
+    top: 7px;
+}
+
+.label_kartochka_1, .label_kartochka_2{
+    margin-top: -4px;
+}
+
+#span_dialog_6, .label_kartochka_1{
+    font-size: 12pt;
+}
+
+#span_dialog_7, .label_kartochka_2{
+    left: 38px;
+    font-size: 12pt;
+}
+
+#dialog_prev_ar_head{
+    /*padding: 0px 11px;*/
+    height: 35px;
+    width: 477px;
+    border-bottom: 2px solid black;
+}
+
+#prev_ar_body{
+    position: absolute;}
+
+.dialog_bt2{
+    position: absolute;
+    height: 23px;
+    width: 118px;
+    left: 355px;
+    top: 6px;
+    background-image: url(../../img/editor/button_edit.jpg);}
+
+.prev_kartochka .dialog_bt2{
+    margin-top: -5px;}
+
+.prev_kartochka_data{
+    position: absolute;
+    border-top: 1px solid black;
+    width: 461px;
+    height: 168px;
+    top: 25px;
+    padding: 0px 8px;
+    overflow: scroll;}
+
+.dialog_data{
+    
+}

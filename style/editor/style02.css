@@ -45,7 +45,7 @@ body{
     left: 180px;
 	position: absolute;
     font-size: 26px;
-    z-index: 1;    }
+    z-index: 1;}
 
 #continer_scene div button{
     display:block;

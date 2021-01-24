@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style/editor/style02.css" />
     <link rel="stylesheet" href="style/editor/style_menul_editor.css" />
     <link rel="stylesheet" href="style/editor/form_race.css" />
-    <link rel="stylesheet" href="style/editor/dialog.css" />
+    <link rel="stylesheet" href="style/editor/form_dialog.css" />
     <script src="script/script01.js"></script>
     <script src="script/editor/obolochka.js"></script>
 </head>
@@ -171,8 +171,52 @@
                 <span>кнопка 4</span>
                 <span>кнопка 5</span>
             </div>
-            <span  class="scene_title">Диалог:</span>
-            <textarea class="dialog_edit1"></textarea>
+            <!--<span  class="scene_title">Диалог:</span>-->
+            <span id="span_dialog_1" class="label">Имя массива</span>
+            <span id="span_dialog_2" class="label">Метаданные</span>
+            <span id="span_dialog_3" class="label">Имя подмассива</span>
+            <span id="span_dialog_4" class="label">Метаданные</span>
+            <span id="span_dialog_5" class="label">Данные:</span>
+            <div id="dialog_line1"></div>
+            <input id="dialog_edit_ar_name" class="scene_edit">
+            <input id="dialog_edit_ar_meta" class="scene_edit">
+            <input id="dialog_edit_subar_name" class="scene_edit">
+            <input id="dialog_edit_subar_meta" class="scene_edit">
+            <div id="dialog_bt_ar_name0" class="dialog_bt1">Применить изменения</div>
+            <div id="dialog_bt_ar_name" class="dialog_bt1">Создать новый массив</div>
+            <div id="dialog_bt_subar_add" class="dialog_bt1">Добавить перечень</div>
+            <div id="dialog_bt_add" class="dialog_bt1">Добавить в массив</div>
+            <div id="wrap_textarea_left">
+                <textarea class="dialog_textarea"></textarea>
+            </div>
+            <div id="prev_ar">
+                <div id="dialog_prev_ar_head">
+                    <span id="span_dialog_6" class="label">(2)</span>
+                    <span id="span_dialog_7" class="label">Массив:</span>
+                    <select id="dialog_select_ar_name">
+                        <option>Тестовое название массива</option>
+                        <option>Имена и населённые пункты</option>
+                    </select>
+                    <div class="dialog_bt2"></div>
+                </div>
+                <div id="prev_ar_body">
+                    <div class="prev_kartochka">
+                        <span class="label_kartochka_1 label">(2)</span>
+                        <span class="label_kartochka_2 label">Имена, муж.</span>
+                        <div class="dialog_bt2"></div>
+                        <div class="prev_kartochka_data">
+                            <span class="dialog_data_count">(18)</span>
+                            <span class="dialog_data">Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать 
+                                несколько абзацев более менее осмысленного текста рыбы на русском языке, а 
+                                начинающему оратору отточить навык публичных выступлений в домашних 
+                                условиях. При создании генератора мы использовали небезизвестный 
+                                универсальный код речей. Текст генерируется абзацами случайным образом от 
+                                двух до десяти предложений в абзаце, что позволяет сделать текст более 
+                                привлекательным и живым для визуально-слухового восприятия.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
