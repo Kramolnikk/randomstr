@@ -65,8 +65,7 @@
     background-color: rgb(182, 182, 182);
     background-size: 100%, 100%;
     margin: 2px 2px 2px 3px;
-    position: absolute;
-    /*transition: margin-top 0.01s;*/}
+    position: absolute;}
 
 .activity_button_menul{
     color: white;
