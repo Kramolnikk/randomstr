@@ -1,11 +1,11 @@
 .scene_edit{
     position: absolute;
     width: 360px;
-    left: 131px;
-    background-color: #daa;}
+    left: 131px;}
 
-.metaEdit {
-    background-color: rgb(255, 255, 255);}
+.redfon{
+    background-color: #fbb;
+}
 
 #dialog_edit_ar_name, #span_dialog_1{
     top: 7px;
