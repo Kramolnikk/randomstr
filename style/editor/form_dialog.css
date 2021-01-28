@@ -24,6 +24,10 @@
     top: 79px;
 }
 
+#dialog_edit_subar_map, #span_dialog_8{
+    top: 102px;
+}
+
 .dialog_bt1{
     position: absolute;
     width: 179px;
@@ -49,13 +53,13 @@
     left: 132px;}
 
 #dialog_bt_subar_add, #dialog_bt_add, #span_dialog_5{
-    top: 103px;}
+    top: 126px;}
 
 .dialog_textarea{
     position: absolute;
     width: 488px;
     height: 308px;
-    top: 125px;
+    top: 148px;
     resize: none;
     left: 4px;}
 
@@ -143,8 +147,5 @@
     height: 168px;
     top: 25px;
     padding: 0px 8px;
-    overflow: scroll;}
-
-.dialog_data{
-    
+    overflow: auto;
 }
