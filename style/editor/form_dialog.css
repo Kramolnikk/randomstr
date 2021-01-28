@@ -102,6 +102,10 @@
 }
 
 .label_kartochka_1, .label_kartochka_2{
+    display: block;
+    height: 19px;
+    width: 300px;
+    overflow: hidden;
     margin-top: -4px;
     margin-left: 2px;
 }

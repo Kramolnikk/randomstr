@@ -10,7 +10,7 @@ function ConstructorScene()
     wrap_menu = document.getElementById('wrap_menu');
     menul_editor_button = document.getElementById('editor_menu').getElementsByTagName('div');
     scene = document.getElementsByClassName('scene');
-    button_display_screen(menul_editor_button[0], 0);
+    button_display_screen(menul_editor_button[12], 12);
     filerace = document.getElementById("race_upload_json").files;
     document.getElementById("selected").innerHTML = (filerace[0]) ? filerace[0].name : 'Файл не выбран';
     emptyDetect(dialog_edit_ar_name);
