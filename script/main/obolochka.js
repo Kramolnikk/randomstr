@@ -18,8 +18,8 @@ function text_scroll(el){
 function fire(){
   var i = 0;
   var ii = 0;
-  var elar = document.getElementById('continer').children;
-  step1(elar);
+  var el_ = document.getElementById('continer').children;
+  step1(el_);
 	function step1(el){
     if (i < el.length) {
       el[i].classList.add('firestep1');
@@ -31,6 +31,9 @@ function fire(){
         ii++;
         el[i-ii].classList.add('firestep2');
         setTimeout(step1, 1500, el);
+      }
+      else {
+        setTimeout("document.getElementById('continer').style.display = 'none'", 1000);
       }
     }
   }
