@@ -1,6 +1,6 @@
 function emptyDetect(el_){
     var el;
-    (typeof el_ === "string" || el_ instanceof String) ? el = document.getElementById(el_) : el = el_;
+    el = (typeof el_ === "string" || el_ instanceof String) ? document.getElementById(el_) : el_;
     if (el.value == ""){
         el.classList.add("redfon")
     }
@@ -46,7 +46,7 @@ function knopka2(){//напихивать сюда все функции с па
 
 function simpleParse(el_){
     var el;
-    (typeof el_ === "string" || el_ instanceof String) ? el = document.getElementById(el_) : el = el_;
+    el = (typeof el_ === "string" || el_ instanceof String) ? document.getElementById(el_) : el_;
     var strtmp = '';
     var arrayMain = [];
     var array = [];

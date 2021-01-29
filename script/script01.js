@@ -1,9 +1,8 @@
 function opacity0Fun(idel, t){
   var op = 0;
   var el;
-  (typeof idel === "string" || idel instanceof String) ? el = document.getElementById(idel) : el = idel;
-  t == undefined ? t = 70 : {};
-  //idel == undefined ? el = this : {};
+  el = (typeof idel === "string" || idel instanceof String) ? document.getElementById(idel) : idel;
+  t = (t == undefined) ? 70 : {};
   if (el.style.opacity == 0){
     function funPlus(){
       if (el.style.opacity <= 1) {
