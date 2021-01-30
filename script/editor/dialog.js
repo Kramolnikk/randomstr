@@ -99,9 +99,9 @@ function knopka2(){//напихивать сюда все функции с па
     postLoad1();//красим пустые поля
     createNewKart();//создаём "карточку"
 //========== далее распихиваем по "карточке" ==========
-    childrenTMP.querySelector('.label_kartochka_1').innerHTML = "(" + (superPuperArray[0][0].length + superPuperArray[0][1].length) + ")";//число в имени
+    childrenTMP.querySelector('.label_kartochka_1').innerHTML = "(" + (superPuperArray[0].length + superPuperArray[1].length) + ")";//число в имени
     childrenTMP.querySelector('.label_kartochka_2').innerHTML = superPuperArray[0].join(", ") +'\u005C ' + superPuperArray[1].join(", ");//имя карточки
-    childrenTMP.querySelector('.dialog_data_count').innerHTML = "(" + superPuperArray[2].length + ")";//число данных
+    childrenTMP.querySelector('.dialog_data_count').innerHTML = "(" + superPuperArray[3].length + ")";//число данных
     for (var i=0; i<= superPuperArray[3].length-1; i++){//заполняем из поля "текстареа"
         //childrenTMP - это <div class="prev_kartochka"></div>
         //spanTMP - это <span class="dialog_data"></span>
