@@ -51,17 +51,20 @@ var dialogFullArray = [];
 
 function knopka3(){
     var newOption;
-    var arraytmp;
     if (dialogNameArray.value){
         newOption = document.createElement('option');
         newOption.innerHTML = dialogNameArray.value;
         dialogSelectedArray.appendChild(newOption);
         dialogSelectedArray.selectedIndex = dialogSelectedArray.length-1;
-        //arraytmp =dialog_edit_ar_meta.value.split(", ")
         dialogFullArray.push([[dialogNameArray.value]]);
         dialogFullArray[dialogFullArray.length-1].push(dialog_edit_ar_meta.value.split(", "));
         dialogFullArray[dialogFullArray.length-1].push([]);
     }
+//========== чистим форму ввода ==========
+    dialogNameArray.value = '';
+    dialog_edit_ar_meta.value = '';
+//======================
+    postLoad1();//красим пустые поля
 }
 
 //создаём справа карточку с данными
