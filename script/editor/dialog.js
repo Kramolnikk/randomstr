@@ -52,7 +52,6 @@ function knopka1(){}
 var dialogFullArray = [];
 
 function knopka3(){//кнопка "Создать новый массив"
-
     if (dialogNameArray.value){
         newOption = document.createElement('option');
         newOption.text = dialogNameArray.value;
@@ -68,13 +67,12 @@ function knopka3(){//кнопка "Создать новый массив"
 //======================
     postLoad1();//красим пустые поля
 }
-
 //создаём справа карточку с данными
 function knopka2(){//напихивать сюда все функции с параметрами, а не в HTML
     if (!dialogSelect.value) {
         alert('Не создан ни один массив!');
         return}
-    //========== тут парсим стандартным .split() ==========
+//========== тут парсим стандартным .split() ==========
     if (document.getElementById('dialog_edit_subar_name').value == ''){
         alert('Введите имя подмассива.')
         return
@@ -83,14 +81,14 @@ function knopka2(){//напихивать сюда все функции с па
         alert('Введите данные.')
         return
     }
-    superPuperArray[0][0] = [document.getElementById('dialog_edit_subar_name').value];
-    superPuperArray[0][0][1] = 'комент';
-    superPuperArray[0][1] = [];
+    superPuperArray[0] = [document.getElementById('dialog_edit_subar_name').value];
+    superPuperArray[0][1] = 'комент';
+    superPuperArray[1] = [];
     if (document.getElementById('dialog_edit_subar_meta').value) {
-        superPuperArray[0][1] = document.getElementById('dialog_edit_subar_meta').value.split('\u005C');
+        superPuperArray[1] = document.getElementById('dialog_edit_subar_meta').value.split('\u005C');
     }
-    superPuperArray[0][2] = document.getElementById('dialog_edit_subar_map').value.split('\u005C');
-    superPuperArray[1] = simpleParse('testTextarea');
+    superPuperArray[2] = document.getElementById('dialog_edit_subar_map').value.split('\u005C');
+    superPuperArray[3] = simpleParse('testTextarea');
 //======================
 //========== чистим форму ввода ==========
     document.getElementById('dialog_edit_subar_name').value = '';
@@ -101,19 +99,18 @@ function knopka2(){//напихивать сюда все функции с па
     postLoad1();//красим пустые поля
     createNewKart();//создаём "карточку"
 //========== далее распихиваем по "карточке" ==========
-    childrenTMP.querySelector('.label_kartochka_1').innerHTML = "(" + (superPuperArray[0][0].length + superPuperArray[0][1].length) + ")";
-    childrenTMP.querySelector('.label_kartochka_2').innerHTML = superPuperArray[0][0].join(", ") +'\u005C ' + superPuperArray[0][1].join(", ");
-    childrenTMP.querySelector('.dialog_data_count').innerHTML = "(" + superPuperArray[1].length + ")";
-    for (var i=0; i<= superPuperArray[1].length-1; i++){
+    childrenTMP.querySelector('.label_kartochka_1').innerHTML = "(" + (superPuperArray[0][0].length + superPuperArray[0][1].length) + ")";//число в имени
+    childrenTMP.querySelector('.label_kartochka_2').innerHTML = superPuperArray[0].join(", ") +'\u005C ' + superPuperArray[1].join(", ");//имя карточки
+    childrenTMP.querySelector('.dialog_data_count').innerHTML = "(" + superPuperArray[2].length + ")";//число данных
+    for (var i=0; i<= superPuperArray[3].length-1; i++){//заполняем из поля "текстареа"
         //childrenTMP - это <div class="prev_kartochka"></div>
         //spanTMP - это <span class="dialog_data"></span>
-        spanTMP.innerHTML = superPuperArray[1][i] + "<br>";
-        childrenTMP.querySelector('.prev_kartochka_data').append(spanTMP.cloneNode(true));
-        childrenTMP.querySelector('.prev_kartochka_data').append(subArrayLine.cloneNode(false));
+        spanTMP.innerHTML = superPuperArray[3][i] + "<br>";//заполняем виртуальный спам строкой-массивом из textarea
+        childrenTMP.querySelector('.prev_kartochka_data').append(spanTMP.cloneNode(true));//вставляем в карточку span с инфой
+        childrenTMP.querySelector('.prev_kartochka_data').append(subArrayLine.cloneNode(false));//разделяем span'ы линией
     }
 //======================
 //========== добавляем данные в главный массив диалогов ==========
-    //dialogFullArray[dialogFullArray.length-1].push(dialogNameArray.value);
     dialogFullArray[dialogSelect.selectedIndex][2].push(superPuperArray);
 //======================
 }
@@ -153,7 +150,6 @@ function dialogRenameSelect(){
     dialogNameArray.value = dialogSelect.value;
     dialog_edit_ar_meta.value = dialogFullArray[dialogSelect.selectedIndex][1].join(", ");
     dialogRenameSelectCheck = dialogSelect.selectedIndex;//запоминаем какой массив редактируем
-    //alert(dialogRenameSelectCheck);
     dialog_bt_ar_name.style.display = "none";//прячем кнопку "Создать массив"
     dialogSelect.disabled = true;
 }
@@ -164,9 +160,9 @@ function dialogRenameSelectComplite(){//кнопка "применить изм�
     dialogFullArray[dialogRenameSelectCheck][1] = dialog_edit_ar_meta.value.split(", ");//пишем в массив изменённые метаданные
     dialog_bt_ar_name.style.display = "block";//возвращаем кнопку "Создать массив"
     dialogSelect.disabled = false;
-    //========== чистим форму ввода ==========
+//========== чистим форму ввода ==========
     dialogNameArray.value = '';
     dialog_edit_ar_meta.value = '';
-    //======================
+//======================
     postLoad1();//красим пустые поля
 }

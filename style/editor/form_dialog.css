@@ -43,6 +43,10 @@
     background-color: #008000;
 }
 
+#dialog_bt_ar_name0{
+    color: white;
+}
+
 #dialog_bt_ar_name0, #dialog_bt_ar_name{
     left: 318px;
     top: 7px;
