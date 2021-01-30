@@ -15,6 +15,7 @@ function ConstructorScene()
     document.getElementById("selected").innerHTML = (filerace[0]) ? filerace[0].name : 'Файл не выбран';
     postLoad1();
     postLoad2();
+    alert('Смотри переменную dialogFullArray - это массив содержащий в себе ВСЕ данные');
 }
 
 function button_display_screen(target, b)
