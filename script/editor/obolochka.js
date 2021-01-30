@@ -13,9 +13,8 @@ function ConstructorScene()
     button_display_screen(menul_editor_button[12], 12);
     filerace = document.getElementById("race_upload_json").files;
     document.getElementById("selected").innerHTML = (filerace[0]) ? filerace[0].name : 'Файл не выбран';
-    emptyDetect(dialog_edit_ar_name);
-    emptyDetect(dialog_edit_subar_name);
-    emptyDetect(testTextarea);
+    postLoad1();
+    postLoad2();
 }
 
 function button_display_screen(target, b)

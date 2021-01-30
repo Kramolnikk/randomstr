@@ -86,11 +86,20 @@
     border: 2px solid black;}
 
 .prev_kartochka{
-    position: absolute;
+    /*! position: absolute; */
     width: 476px;
     height: 200px;
     background-color: #dfdfdf;
     margin-bottom: 3px;
+    float: left;
+}
+
+.prev_kartochka_data{
+border-top: 1px solid rgb(253, 104, 104);
+width: 461px;
+height: 168px;
+padding: 0px 8px;
+overflow: auto;
 }
 
 #dialog_select_ar_name{
@@ -99,17 +108,14 @@
     width: 248px;
 }
 
-#dialog_select_ar_name, #span_dialog_6, #span_dialog_7, .label_kartochka_1, .label_kartochka_2{
-    top: 7px;
+.label_kartochka_1{
+    display: inline-block;
+    margin-left: 6px;
 }
 
-.label_kartochka_1, .label_kartochka_2{
-    display: block;
-    height: 19px;
-    width: 300px;
-    overflow: hidden;
-    margin-top: -4px;
-    margin-left: 2px;
+#dialog_select_ar_name, #span_dialog_6, #span_dialog_7, .label_kartochka_1, .label_kartochka_2{
+    margin-top: 5px;
+    margin-bottom: 3px;
 }
 
 #span_dialog_6{
@@ -120,14 +126,14 @@
     font-size: 12pt;
 }
 
-#span_dialog_7, .label_kartochka_2{
+#span_dialog_7{
     left: 38px;
     font-size: 12pt;
 }
 
 #dialog_prev_ar_head{
     /*padding: 0px 11px;*/
-    height: 35px;
+    height: 31px;
     width: 477px;
     border-bottom: 2px solid black;
 }
@@ -136,22 +142,21 @@
     position: absolute;}
 
 .dialog_bt2{
-    position: absolute;
+    float: right;
     height: 23px;
     width: 118px;
-    left: 355px;
-    top: 6px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    margin-right: 3px;
     background-image: url(../../img/editor/button_edit.jpg);}
 
-.prev_kartochka .dialog_bt2{
-    margin-top: -5px;}
+#secretKartochka{
+    display: none;
+}
 
-.prev_kartochka_data{
-    position: absolute;
-    border-top: 1px solid black;
-    width: 461px;
-    height: 168px;
-    top: 25px;
-    padding: 0px 8px;
-    overflow: auto;
+.subArrayLine{
+    height: 1px;
+    width: 450px;
+    background-color: #B8B8B8;
+    margin: 0 auto;
 }

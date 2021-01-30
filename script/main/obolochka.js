@@ -1,3 +1,5 @@
+"use strict"
+
 function glagolvoice(idel){
   var el = document.getElementById(idel);
       if (el.style.opacity == 0){

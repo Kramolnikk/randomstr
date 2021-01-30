@@ -1,3 +1,5 @@
+"use strict"
+
 function emptyDetect(el_){
     var el;
     el = (typeof el_ === "string" || el_ instanceof String) ? document.getElementById(el_) : el_;
@@ -11,14 +13,60 @@ function emptyDetect(el_){
 
 var arrayNames  = [];
 var superPuperArray = [[],[]];
-var superArray = [];
+var newKartochka;
+var kart_continer;
+var childrenTMP;
+var spanTMP;
+var subArrayLine;
+var dialogNameArray;
+var dialogSelectedArray;
+var dialog_edit_ar_meta;
 
-function knopka1(){
-    
+function postLoad1(){
+    emptyDetect(dialog_edit_ar_name);
+    emptyDetect(dialog_edit_subar_name);
+    emptyDetect(testTextarea);
 }
 
+function postLoad2(){
+    kart_continer = document.getElementById("prev_ar_body");
+    subArrayLine = document.createElement('div');
+    subArrayLine.classList.add('subArrayLine');
+    spanTMP = document.createElement('span');
+    spanTMP.classList.add('dialog_data');
+    dialogNameArray = document.getElementById('dialog_edit_ar_name')
+    dialogSelectedArray = document.getElementById('dialog_select_ar_name');
+    dialog_edit_ar_meta = document.getElementById('dialog_edit_ar_meta');
+}
+
+function createNewKart(){
+    newKartochka = document.getElementById('secretKartochka').cloneNode(true);
+    newKartochka.removeAttribute("id");
+    kart_continer.append(newKartochka);//Вставляем чистую карточку
+    childrenTMP = kart_continer.lastChild;}
+
+function knopka1(){}
+
+var dialogFullArray = [];
+
+function knopka3(){
+    var newOption;
+    var arraytmp;
+    if (dialogNameArray.value){
+        newOption = document.createElement('option');
+        newOption.innerHTML = dialogNameArray.value;
+        dialogSelectedArray.appendChild(newOption);
+        dialogSelectedArray.selectedIndex = dialogSelectedArray.length-1;
+        //arraytmp =dialog_edit_ar_meta.value.split(", ")
+        dialogFullArray.push([[dialogNameArray.value]]);
+        dialogFullArray[dialogFullArray.length-1].push(dialog_edit_ar_meta.value.split(", "));
+        dialogFullArray[dialogFullArray.length-1].push([]);
+    }
+}
+
+//создаём справа карточку с данными
 function knopka2(){//напихивать сюда все функции с параметрами, а не в HTML
-//========== тут парсим ==========
+//========== тут парсим стандартным .split() ==========
     if (document.getElementById('dialog_edit_subar_name').value == ''){
         alert('Введите имя подмассива.')
         return
@@ -35,19 +83,34 @@ function knopka2(){//напихивать сюда все функции с па
     }
     superPuperArray[0][2] = document.getElementById('dialog_edit_subar_map').value.split('\u005C');
     superPuperArray[1] = simpleParse('testTextarea');
-//==========  ==========
+//======================
+//========== чистим форму ввода ==========
+    document.getElementById('dialog_edit_subar_name').value = '';
+    document.getElementById('dialog_edit_subar_meta').value = '';
+    document.getElementById('dialog_edit_subar_map').value = '';
+    document.getElementById('testTextarea').value = '';
+//======================
+    postLoad1();//красим пустые поля
+    createNewKart();//создаём "карточку"
 //========== далее распихиваем по "карточке" ==========
-    document.getElementById('testspan1').innerHTML = "(" + (superPuperArray[0][0].length + superPuperArray[0][1].length) + ")";
-    document.getElementById('testspan2').innerHTML = superPuperArray[0][0].join(", ") +'\u005C ' + superPuperArray[0][1].join(", ");
-    document.getElementById('testspan3').innerHTML = '';
-    document.getElementById('testspan3').innerHTML = "(" + superPuperArray[1].length + ")";
-    document.getElementById('testspan4').innerHTML = '';
+    childrenTMP.querySelector('.label_kartochka_1').innerHTML = "(" + (superPuperArray[0][0].length + superPuperArray[0][1].length) + ")";
+    childrenTMP.querySelector('.label_kartochka_2').innerHTML = superPuperArray[0][0].join(", ") +'\u005C ' + superPuperArray[0][1].join(", ");
+    childrenTMP.querySelector('.dialog_data_count').innerHTML = "(" + superPuperArray[1].length + ")";
     for (var i=0; i<= superPuperArray[1].length-1; i++){
-        document.getElementById('testspan4').innerHTML += superPuperArray[1][i] + "<br>";
+        //childrenTMP - это <div class="prev_kartochka"></div>
+        //spanTMP - это <span class="dialog_data"></span>
+        spanTMP.innerHTML = superPuperArray[1][i] + "<br>";
+        childrenTMP.querySelector('.prev_kartochka_data').append(spanTMP.cloneNode(true));
+        childrenTMP.querySelector('.prev_kartochka_data').append(subArrayLine.cloneNode(false));
     }
+//======================
+//========== добавляем данные в главный массив диалогов ==========
+    //dialogFullArray[dialogFullArray.length-1].push(dialogNameArray.value);
+    dialogFullArray[dialogSelectedArray.selectedIndex][2].push(superPuperArray);
+//======================
 }
 
-function simpleParse(el_){
+function simpleParse(el_){//самописный парсер, отличается дополнительной вложенностью при знаке переноса строки
     var el;
     el = (typeof el_ === "string" || el_ instanceof String) ? document.getElementById(el_) : el_;
     var strtmp = '';
