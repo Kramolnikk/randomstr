@@ -29,13 +29,16 @@ function knopka2(){//напихивать сюда все функции с па
     }
     superPuperArray[0][0] = [document.getElementById('dialog_edit_subar_name').value];
     superPuperArray[0][0][1] = 'комент';
-    superPuperArray[0][1] = document.getElementById('dialog_edit_subar_meta').value.split('\u005C');
+    superPuperArray[0][1] = [];
+    if (document.getElementById('dialog_edit_subar_meta').value) {
+        superPuperArray[0][1] = document.getElementById('dialog_edit_subar_meta').value.split('\u005C');
+    }
     superPuperArray[0][2] = document.getElementById('dialog_edit_subar_map').value.split('\u005C');
     superPuperArray[1] = simpleParse('testTextarea');
 //==========  ==========
 //========== далее распихиваем по "карточке" ==========
     document.getElementById('testspan1').innerHTML = "(" + (superPuperArray[0][0].length + superPuperArray[0][1].length) + ")";
-    document.getElementById('testspan2').innerHTML = superPuperArray[0][0].join(", ") +', ' + superPuperArray[0][1].join(", ");
+    document.getElementById('testspan2').innerHTML = superPuperArray[0][0].join(", ") +'\u005C ' + superPuperArray[0][1].join(", ");
     document.getElementById('testspan3').innerHTML = '';
     document.getElementById('testspan3').innerHTML = "(" + superPuperArray[1].length + ")";
     document.getElementById('testspan4').innerHTML = '';
@@ -68,8 +71,6 @@ function simpleParse(el_){
         }
     }
     return arrayMain.slice();
-    //kartaRender(target);
-
 }
 
 

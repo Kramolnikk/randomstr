@@ -3,6 +3,8 @@
     width: 360px;
     left: 131px;}
 
+.scene_edit, .dialog_textarea, select{background-color: #F3F3F3;}
+
 .redfon{
     background-color: #fbb;
 }
@@ -53,13 +55,13 @@
     left: 132px;}
 
 #dialog_bt_subar_add, #dialog_bt_add, #span_dialog_5{
-    top: 126px;}
+    top: 127px;}
 
 .dialog_textarea{
     position: absolute;
     width: 488px;
     height: 308px;
-    top: 148px;
+    top: 149px;
     resize: none;
     left: 4px;}
 
