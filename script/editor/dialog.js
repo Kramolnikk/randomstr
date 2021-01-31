@@ -11,8 +11,7 @@ function emptyDetect(el_){
     }
 }
 
-var arrayNames  = [];
-var superPuperArray = [[],[]];
+
 var newKartochka;
 var kart_continer;
 var childrenTMP;
@@ -38,7 +37,6 @@ function postLoad2(){
     dialogNameArray = document.getElementById('dialog_edit_ar_name');
     dialog_edit_ar_meta = document.getElementById('dialog_edit_ar_meta');
     dialogSelect = document.getElementById('dialog_select_ar_name');
-    //newOption = document.createElement('option');
 }
 
 function createNewKart(){
@@ -69,33 +67,33 @@ function knopka3(){//кнопка "Создать новый массив"
 }
 //создаём справа карточку с данными
 function knopka2(){//напихивать сюда все функции с параметрами, а не в HTML
+    var superPuperArray = [];
+    var dialogMap = document.getElementById('dialog_edit_subar_map');
+    var dialogSubName = document.getElementById('dialog_edit_subar_name');
+    var dialogSubMeta = document.getElementById('dialog_edit_subar_meta');
+    var dialogTextarea = document.getElementById('testTextarea');
     if (!dialogSelect.value) {
-        alert('Не создан ни один массив!');
-        return}
-//========== тут парсим стандартным .split() ==========
-    if (document.getElementById('dialog_edit_subar_name').value == ''){
-        alert('Введите имя подмассива.')
-        return
+        alert('Не создан ни один массив!'); return
     }
-    if (document.getElementById('testTextarea').value == ''){
-        alert('Введите данные.')
-        return
+    //========== тут парсим стандартным .split() ==========
+    if (dialogSubName.value == ''){
+        alert('Введите имя подмассива.'); return
     }
-    superPuperArray[0] = [document.getElementById('dialog_edit_subar_name').value];
+    if (dialogTextarea.value == ''){
+        alert('Введите данные.'); return
+    }
+    superPuperArray[0] = [dialogSubName.value];
     superPuperArray[0][1] = 'комент';
-    superPuperArray[1] = [];
-    if (document.getElementById('dialog_edit_subar_meta').value) {
-        superPuperArray[1] = document.getElementById('dialog_edit_subar_meta').value.split('\u005C');
-    }
-    superPuperArray[2] = document.getElementById('dialog_edit_subar_map').value.split('\u005C');
-    superPuperArray[3] = simpleParse('testTextarea');
-//======================
-//========== чистим форму ввода ==========
-    document.getElementById('dialog_edit_subar_name').value = '';
-    document.getElementById('dialog_edit_subar_meta').value = '';
-    document.getElementById('dialog_edit_subar_map').value = '';
-    document.getElementById('testTextarea').value = '';
-//======================
+    superPuperArray[1] = (dialogSubMeta.value) ? dialogSubMeta.value.split('\u005C') : [];
+    superPuperArray[2] = (dialogMap.value) ? dialogMap.value.split('\u005C') : [];
+    superPuperArray[3] = simpleParse(dialogTextarea);
+    //======================
+    //========== чистим форму ввода ==========
+    dialogSubName.value = '';
+    dialogSubMeta.value = '';
+    dialogMap.value = '';
+    dialogTextarea.value = '';
+    //======================
     postLoad1();//красим пустые поля
     createNewKart();//создаём "карточку"
 //========== далее распихиваем по "карточке" ==========
@@ -109,10 +107,10 @@ function knopka2(){//напихивать сюда все функции с па
         childrenTMP.querySelector('.prev_kartochka_data').append(spanTMP.cloneNode(true));//вставляем в карточку span с инфой
         childrenTMP.querySelector('.prev_kartochka_data').append(subArrayLine.cloneNode(false));//разделяем span'ы линией
     }
-//======================
-//========== добавляем данные в главный массив диалогов ==========
+    //======================
+    //========== добавляем данные в главный массив диалогов ==========
     dialogFullArray[dialogSelect.selectedIndex][2].push(superPuperArray.slice());
-//======================
+    //======================
 }
 
 function simpleParse(el_){//самописный парсер, отличается дополнительной вложенностью при знаке переноса строки
