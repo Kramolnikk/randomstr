@@ -111,7 +111,7 @@ function knopka2(){//напихивать сюда все функции с па
     }
 //======================
 //========== добавляем данные в главный массив диалогов ==========
-    dialogFullArray[dialogSelect.selectedIndex][2].push(superPuperArray);
+    dialogFullArray[dialogSelect.selectedIndex][2].push(superPuperArray.slice());
 //======================
 }
 
