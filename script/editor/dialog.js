@@ -139,7 +139,7 @@ function dialogRenameSelect(){
 
 function dialogSelectComplite(){//кнопка "применить изменения"
     dialogFullArray[dialogSelectCheck][0][0] = dialogNameArray.value;//пишем в массив изменённое имя
-    dialogSelect.childNodes[dialogSelectCheck+1].text = dialogFullArray[dialogSelectCheck][0];//меняем надпись выбранного элемента
+    dialogSelect.childNodes[dialogSelectCheck].text = dialogFullArray[dialogSelectCheck][0];//меняем надпись выбранного элемента
     dialogFullArray[dialogSelectCheck][1] = dialog_edit_ar_meta.value.split(", ");//пишем в массив изменённые метаданные
     dialog_bt_ar_name.style.display = "block";//возвращаем кнопку "Создать массив"
     dialogSelect.disabled = false;
