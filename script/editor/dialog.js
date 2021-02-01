@@ -1,6 +1,5 @@
 "use strict";
 
-var kart_continer, subArrayLine;
 var newOption, dialogFullArray = [];
 var dialogSelectCheck;//переменная что бы запомнить какой массив переименовываем
 var selectedArray;//храним выбранный селектом массив
@@ -29,12 +28,13 @@ function emptyDetect(el_){//если элемент пуст делаем фон
 
 
 function postLoad2(){
-    kart_continer = document.getElementById("prev_ar_body");
-    subArrayLine = document.createElement("div");
+    window.kart_continer = document.getElementById("prev_ar_body");
+    window.subArrayLine = document.createElement("div");
     subArrayLine.classList.add("subArrayLine");
 
     window.dialogNameArray = document.getElementById("dialog_edit_ar_name");
     window.dialog_edit_ar_meta = document.getElementById("dialog_edit_ar_meta");
+    window.dialogKomentArray = document.getElementById("dialog_edit_ar_koment");
     window.dialogSelect = document.getElementById("dialog_select_ar_name");
 
     window.dialogMap = document.getElementById("dialog_edit_subar_map");
@@ -43,7 +43,6 @@ function postLoad2(){
     window.dialogTextarea = document.getElementById("testTextarea");
     window.dialogSelectA = dialogSelect.selectedIndex;
     refreshSelected();//обновляем указатель на массив
-    //dialogSelect.onchange = (refreshSelected, newEra);
     dialogSelect.onchange = refreshSelected;
 }
 
@@ -57,7 +56,14 @@ function dialogCleaned(){
 }
 
 
-function refreshSelected(){//коротко говорим какой массив сейчас выбран
+function dialogClean0(){
+   dialogNameArray.value = "";
+   dialogKomentArray.value = "";
+   dialog_edit_ar_meta.value = "";
+}
+
+
+function refreshSelected(){//актуализируем инфу о выбранном массиве
     dialogSelectA = dialogSelect.selectedIndex;
     selectedArray = dialogFullArray[dialogSelectA];
     newEra();
@@ -65,19 +71,22 @@ function refreshSelected(){//коротко говорим какой масси
 
 
 function knopka3(){//кнопка "Создать новый массив"
+    var array = [];
     if (!dialogNameArray.value) return(alert("Введите имя массива."));
+
+    array.push([dialogNameArray.value]);
+    array[0].push(dialogKomentArray.value);
+    array.push(dialog_edit_ar_meta.value.split(", "));
+    array.push([]);
+    dialogFullArray.push(array);
+
     newOption = document.createElement("option");
     newOption.text = dialogNameArray.value;
     dialogSelect.appendChild(newOption);
     dialogSelect.selectedIndex = dialogSelect.length-1;
-    dialogFullArray.push([[dialogNameArray.value]]);
-    dialogFullArray[dialogFullArray.length-1].push(dialog_edit_ar_meta.value.split(", "));
-    dialogFullArray[dialogFullArray.length-1].push([]);
-//========== чистим форму ввода ==========
-//    dialogNameArray.value = "";
-//    dialog_edit_ar_meta.value = "";
-//======================
-    refreshSelected();
+    
+    dialogClean0();// чистим форму ввода
+    refreshSelected();//сообщаем какой массив выбран
     postLoadColor();//красим пустые поля
 }
 
@@ -88,7 +97,7 @@ function knopka2(){//"добавить в массив"
     if (!dialogSubName.value) return(alert("Введите имя подмассива."));
     if (!dialogTextarea.value) return(alert("Введите данные."));
     array = standartParseDialog();//парсим стандартным .split()
-    dialogFullArray[dialogSelectA][2].push(array.slice());//обработанные данные в массив
+    selectedArray[2].push(array.slice());//обработанные данные в массив
     createClearKart();//создаём карту и вставляем в список
     arrayViuwer(array);//отдаём массив для визуализации на карточке
     dialogCleaned();
@@ -98,7 +107,7 @@ function knopka2(){//"добавить в массив"
 function standartParseDialog(){//парсим стандартным .split()
     var array = [];
     array[0] = [dialogSubName.value];
-    array[0][1] = "комент";
+    array[0][1] = dialogKomentArray.value;
     array[1] = (dialogSubMeta.value) ? dialogSubMeta.value.split('\u005C') : [];
     array[2] = (dialogMap.value) ? dialogMap.value.split('\u005C') : [];
     array[3] = simpleParse(dialogTextarea);
@@ -140,9 +149,9 @@ function knopka5(){//кнопка "Применить изменения" (в к
     array = standartParseDialog();
     createClearKart();//создаём карту и вставляем в список
     arrayViuwer(array);
-    dialogFullArray[dialogSelectA][2][selectKartI] = array.slice();//обработанные данные в массив
+    selectedArray[2][selectKartI] = array.slice();//обработанные данные в массив
     selectKartI = "";
-    dialog_bt_subar_add.style.display = "block";//возвращаем кнопку "Добавить в массив"
+    kartCosmetic("", false);
     dialogCleaned();
 }
 
@@ -184,32 +193,33 @@ function simpleReParse(array, targetTextarea){//распаковываем ма�
 }
 
 
-function dialogRenameSelect(){
+function dialogRenameSelect(){//кнопка "изменить" (Глав. массив)
     if (!dialogSelect.value) return alert("Не выбран ни один массив!");
-    dialogNameArray.value = dialogSelect.value;
-    dialog_edit_ar_meta.value = dialogFullArray[dialogSelectA][1].join(", ");
+    dialogNameArray.value = selectedArray[0][0];
+    dialogKomentArray.value = selectedArray[0][1];
+    dialog_edit_ar_meta.value = selectedArray[1].join(", ");
     dialogSelectCheck = dialogSelectA;//запоминаем какой массив переименовываем
     dialog_bt_ar_name.style.display = "none";//прячем кнопку "Создать массив"
     dialogSelect.disabled = true;
+    postLoadColor();
 }
 
 
 function dialogSelectComplite(){//кнопка "применить изменения" (Глав. массив)
+    dialogSelect.disabled = false;
     dialogFullArray[dialogSelectCheck][0][0] = dialogNameArray.value;//пишем в массив изменённое имя
-    dialogSelect.childNodes[dialogSelectCheck].text = dialogFullArray[dialogSelectCheck][0];//меняем надпись выбранного элемента
+    dialogFullArray[dialogSelectCheck][0][1] = dialogKomentArray.value;//пишем в массив изменённый ком.
+    dialogSelect.childNodes[dialogSelectCheck].text = dialogFullArray[dialogSelectCheck][0][0];//меняем надпись выбранного элемента
     dialogFullArray[dialogSelectCheck][1] = dialog_edit_ar_meta.value.split(", ");//пишем в массив изменённые метаданные
     dialog_bt_ar_name.style.display = "block";//возвращаем кнопку "Создать массив"
-    dialogSelect.disabled = false;
-    //========== чистим форму ввода ==========
-    dialogNameArray.value = "";
-    dialog_edit_ar_meta.value = "";
-    //======================
+    dialogClean0();
     postLoadColor();
 }
 
 
 function knopka4(el){//изменение карточки
     var array;
+    if (selectKartI != "" && selectKartI > -1) return;
     //========== получаем целевой массив (ссылку) ==========
     el = el.parentNode.parentNode;//получаем узел карточки
     for (var i=0; i < kart_continer.childNodes.length; i++){//ищем порядковый номер карточки
@@ -226,34 +236,41 @@ function knopka4(el){//изменение карточки
     dialogMap.value = array[2].join(", ");//карта
     simpleReParse(array[3], dialogTextarea);//текстареа
     //======================
-    dialog_bt_subar_add.style.display = "none";//прячем кнопку "Добавить в массив"
+    kartCosmetic(el, true);//обводка карт и деактивация кнопок
     postLoadColor();
 }
 
 
-function newEra(){
-    var elTMP, elTMP2;
-    var i = 0;
-    //этот метод создаёт новый объект и убивает работу, нужно переопределять
-    // if (elTMP2){
-        // kart_continer.removeAttribute("id");
-        //  elTMP = kart_continer.cloneNode(false);
-        //  elTMP2 = kart_continer.parentNode;
-        //  elTMP2.replaceChild(elTMP, kart_continer);//подмена редактируемой карты на пустую
-        //  kart_continer.setAttribute('id', 'prev_ar_body');
-    // }else{console.log("нечего очищать")}
+function kartCosmetic(el, order){
+    var i=0;
+    if (order){
+        while (document.querySelectorAll(".dialog_bt2")[i]){
+            document.querySelectorAll(".dialog_bt2")[i].parentNode.parentNode.classList.remove("kartChek");
+            //document.querySelectorAll(".dialog_bt2")[i].classList.add("btgray");
+            i++
+        }
+        dialog_bt_subar_add.style.display = "none";//прячем кнопку "Добавить в массив"
+        dialogSelect.disabled = true;//деактивируем селект
+        el.classList.add("kartChek");//красная обводка
+    } else{
+        dialog_bt_subar_add.style.display = "block";//прячем кнопку "Добавить в массив"
+        dialogSelect.disabled = false;
+    }
+}
 
+
+function newEra(){
+    var i = 0;
     //убираем все карточки
     while(kart_continer.childNodes[0]){
         kart_continer.childNodes[0].remove();
     }
 
     //отрисовываем новые карточки
-    //for (var i=0; dialogFullArray[dialogSelectA][i].length<i; i++){
-    if (!dialogFullArray[dialogSelectA]) return;
-    while(dialogFullArray[dialogSelectA][2][i]){
+    if (!selectedArray) return;
+    while(selectedArray[2][i]){
         createClearKart();//создаём карту и вставляем в список
-        arrayViuwer(dialogFullArray[dialogSelectA][2][i]);//отдаём массив для визуализации на карточке
+        arrayViuwer(selectedArray[2][i]);//визуалим данные на карточке
         i++;
     }
 }

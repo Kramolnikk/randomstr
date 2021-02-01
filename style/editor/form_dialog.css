@@ -18,16 +18,20 @@
     top: 30px;
 }
 
-#dialog_edit_subar_name, #span_dialog_3{
-    top: 56px;
+#dialog_edit_ar_koment, #span_dialog_koment{
+    top: 53px;
 }
 
-#dialog_edit_subar_meta, #span_dialog_4{
+#dialog_edit_subar_name, #span_dialog_3{
     top: 79px;
 }
 
-#dialog_edit_subar_map, #span_dialog_8{
+#dialog_edit_subar_meta, #span_dialog_4{
     top: 102px;
+}
+
+#dialog_edit_subar_map, #span_dialog_8{
+    top: 125px;
 }
 
 .dialog_bt1{
@@ -37,13 +41,15 @@
     background-color: #009700;
     text-align: center;
     user-select: none;
+    outline: 1px solid rgb(63, 63, 63);
+    outline-offset: -1px;
 }
 
 .dialog_bt1:active{
     background-color: #008000;
 }
 
-#dialog_bt_ar_name0{
+#dialog_bt_ar_name0, #dialog_bt_subar_add0{
     color: white;
 }
 
@@ -59,13 +65,13 @@
     left: 132px;}
 
 #dialog_bt_subar_add, #dialog_bt_subar_add0, #dialog_bt_add, #span_dialog_5{
-    top: 127px;}
+    top: 150px;}
 
 .dialog_textarea{
     position: absolute;
     width: 488px;
     height: 308px;
-    top: 149px;
+    top: 172px;
     resize: none;
     left: 4px;}
 
@@ -79,7 +85,7 @@
     position: absolute;
     height: 1px;
     width: 496px;
-    top: 53px;
+    top: 76px;
     background-color: black;}
 /*================  ПРАВАЯ ЧАСТЬ  ===================*/
 #prev_ar{
@@ -163,4 +169,32 @@ overflow: auto;
     width: 450px;
     background-color: #B8B8B8;
     margin: 0 auto;
+}
+
+.dialog_data_count, .label_name_count, #span_dialog_6{
+    background-color: cadetblue;
+    width: auto !important;
+}
+
+.kartChek{
+    outline: 2px solid rgb(202, 0, 0);
+    outline-offset: -2px;
+}
+
+.btgray{
+    -webkit-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: grayscale(1);
+    filter: gray; /* IE 6-9 */
+}
+
+.dialog_bt2:active{
+    -webkit-filter: grayscale(35%);
+    -ms-filter: grayscale(35%);
+    -o-filter: grayscale(35%);
+    filter: grayscale(35%);
+    filter: grayscale(0.35);
+    filter: gray; /* IE 6-9 */
 }
