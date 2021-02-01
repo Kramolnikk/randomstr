@@ -13,9 +13,9 @@ function ConstructorScene()
     button_display_screen(menul_editor_button[12], 12);
     filerace = document.getElementById("race_upload_json").files;
     document.getElementById("selected").innerHTML = (filerace[0]) ? filerace[0].name : 'Файл не выбран';
-    postLoad1();
+    postLoadColor();
     postLoad2();
-    alert('Смотри переменную dialogFullArray - это массив содержащий в себе ВСЕ данные');
+    //alert('Смотри переменную dialogFullArray - это массив содержащий в себе ВСЕ данные');
 }
 
 function button_display_screen(target, b)

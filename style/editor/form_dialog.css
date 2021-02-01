@@ -52,13 +52,13 @@
     top: 7px;
 }
 
-#dialog_bt_subar_add{
+#dialog_bt_subar_add, #dialog_bt_subar_add0{
     left: 318px;}
 
 #dialog_bt_add{
     left: 132px;}
 
-#dialog_bt_subar_add, #dialog_bt_add, #span_dialog_5{
+#dialog_bt_subar_add, #dialog_bt_subar_add0, #dialog_bt_add, #span_dialog_5{
     top: 127px;}
 
 .dialog_textarea{
@@ -112,12 +112,12 @@ overflow: auto;
     width: 248px;
 }
 
-.label_kartochka_1{
+.label_name_count{
     display: inline-block;
     margin-left: 6px;
 }
 
-#dialog_select_ar_name, #span_dialog_6, #span_dialog_7, .label_kartochka_1, .label_kartochka_2{
+#dialog_select_ar_name, #span_dialog_6, #span_dialog_7, .label_name_count, .label_kartochka_2{
     margin-top: 5px;
     margin-bottom: 3px;
 }
@@ -126,7 +126,7 @@ overflow: auto;
     margin-left: 2px;
 }
 
-#span_dialog_6, .label_kartochka_1{
+#span_dialog_6, .label_name_count{
     font-size: 12pt;
 }
 
