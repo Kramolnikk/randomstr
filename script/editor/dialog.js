@@ -6,6 +6,7 @@ var selectedArray;//храним выбранный селектом масси�
 var selectKartI = "";//запоминаем номер карточки
 var dialogSelectA;
 var kartTMP;
+var dialogRenameMode = false;//режим переименовывания массива
 
 
 function postLoadColor(){//красим пустые поля
@@ -60,6 +61,7 @@ function dialogClean0(){
    dialogNameArray.value = "";
    dialogKomentArray.value = "";
    dialog_edit_ar_meta.value = "";
+   postLoadColor();
 }
 
 
@@ -100,6 +102,7 @@ function knopka2(){//"добавить в массив"
     selectedArray[2].push(array.slice());//обработанные данные в массив
     createClearKart();//создаём карту и вставляем в список
     arrayViuwer(array);//отдаём массив для визуализации на карточке
+    //selectKartI = "";//говорим что выбранной карты более нет
     dialogCleaned();
 }
 
@@ -118,10 +121,10 @@ function standartParseDialog(){//парсим стандартным .split()
 function createClearKart(){
     kartTMP = document.getElementById("secretKartochka").cloneNode(true);
     kartTMP.removeAttribute("id");
-    if (selectKartI !== ""){
-        kart_continer.replaceChild(kartTMP, kart_continer.childNodes[selectKartI]);//подмена редактируемой карты на пустую
-    } else{
+    if (selectKartI === ""){
         kart_continer.append(kartTMP);//Вставляем в конец чистую карточку
+    } else{
+        kart_continer.replaceChild(kartTMP, kart_continer.childNodes[selectKartI]);//подмена редактируемой карты на пустую
     }
     return kartTMP;
 }
@@ -153,6 +156,7 @@ function knopka5(){//кнопка "Применить изменения" (в к
     selectKartI = "";//говорим что выбранной карты более нет
     kartCosmetic("", false);
     dialogCleaned();
+    zamorozkaSelectCreat(false);
 }
 
 
@@ -193,51 +197,67 @@ function simpleReParse(array, targetTextarea){//распаковываем ма�
 }
 
 
+function svichDisp(el){//крайне небезопасно
+    el.style.display = (getComputedStyle(el).display == "block") ? "none" : "block";
+}
+
+
 function dialogRenameSelect(){//кнопка "изменить" (Глав. массив)
+    var head = dialog_prev_ar_head.classList;
     if (!dialogSelect.value) return alert("Не выбран ни один массив!");
+    head.contains("kartChek") ? head.remove("kartChek") : head.add("kartChek");
+    if (dialogRenameMode) {
+        dialog_bt_ar_name.style.display = "block"//показать кнопку "Создать массив"
+        dialogSelect.disabled = false;
+        dialogRenameMode = false;
+        dialogClean0()
+        return
+    }
     dialogNameArray.value = selectedArray[0][0];
     dialogKomentArray.value = selectedArray[0][1];
     dialog_edit_ar_meta.value = selectedArray[1].join(", ");
     dialogSelectCheck = dialogSelectA;//запоминаем какой массив переименовываем
-    dialog_bt_ar_name.style.display = "none";//прячем кнопку "Создать массив"
+    dialog_bt_ar_name.style.display = "none"//прячем кнопку "Создать массив"
     dialogSelect.disabled = true;
+    dialogRenameMode = dialogRenameMode ? false : true;
     postLoadColor();
 }
 
 
 function dialogSelectComplite(){//кнопка "применить изменения" (Глав. массив)
+    var head = dialog_prev_ar_head.classList;
     dialogSelect.disabled = false;
     dialogFullArray[dialogSelectCheck][0][0] = dialogNameArray.value;//пишем в массив изменённое имя
     dialogFullArray[dialogSelectCheck][0][1] = dialogKomentArray.value;//пишем в массив изменённый ком.
     dialogSelect.childNodes[dialogSelectCheck].text = dialogFullArray[dialogSelectCheck][0][0];//меняем надпись выбранного элемента
     dialogFullArray[dialogSelectCheck][1] = dialog_edit_ar_meta.value.split(", ");//пишем в массив изменённые метаданные
-    dialog_bt_ar_name.style.display = "block";//возвращаем кнопку "Создать массив"
+    dialogRenameMode = false;//говорим что больше не редактируем
+    //svichDisp(dialog_bt_ar_name);//возвращаем кнопку "Создать массив"
+    dialog_bt_ar_name.style.display = "block";//показать кнопку "Создать массив"
+    head.remove("kartChek");
     dialogClean0();
-    postLoadColor();
 }
 
-var ar;
+//var ar;
 function knopka4(el){//изменение карточки
     var array;
     el = el.parentNode.parentNode;//получаем узел карточки
-    if (selectKartI != "" && selectKartI > -1) return;
 
-    if (el.classList.contains("kartChek")) {
-        kartCosmetic(el, false);//обводка карт и деактивация кнопок
+    if (el.classList.contains("kartChek")) {//если уже редактируется ИМЕННО ОНА
+        kartCosmetic(el, false);//снять обводку и деактивация кнопок
         postLoadColor();
+        zamorozkaSelectCreat(false);
         return
     }
-    //}
-    //console.log(selectKartI);
     //========== получаем целевой массив (ссылку) ==========
     for (var i=0; i < kart_continer.childNodes.length; i++){//ищем порядковый номер карточки
         if (kart_continer.childNodes[i] == el) {//сравниваем родительскую карточку с нашей
-            array = selectedArray[2][i];//выделяем в array целевой массив
             selectKartI = i;//запоминаем номер карточки
-            break//прерываем поиск в родителе раз уже нашли
+            break//прерываем поиск раз уже нашли
         };
     }
     //======================
+    array = selectedArray[2][selectKartI];//выделяем в array целевой массив
     //========== тащим в форму для изменения ==========
     dialogSubName.value = array[0][0];//имя
     dialogSubMeta.value = array[1].join(", ");//мета
@@ -246,24 +266,59 @@ function knopka4(el){//изменение карточки
     //======================
     kartCosmetic(el, true);//обводка карт и деактивация кнопок
     postLoadColor();
+    zamorozkaSelectCreat(true);
 }
+
+
+function zamorozkaSelectCreat(disabled){
+    if (disabled){
+        dialog_edit_ar_name.disabled = true;
+        dialog_edit_ar_meta.disabled = true;
+        dialog_edit_ar_koment.disabled = true;
+        dialog_bt_ar_name.onclick = function() {};
+        dialog_bt2_ar_name.onclick = function() {};
+        dialog_edit_ar_name.classList.add("btgray");
+        dialog_edit_ar_meta.classList.add("btgray");
+        dialog_edit_ar_koment.classList.add("btgray");
+        dialog_bt_ar_name.classList.add("btgray");
+        dialog_bt2_ar_name.classList.add("btgray");
+        dialog_bt_ar_name0.style.display = "none";
+    } else{
+        dialog_edit_ar_name.disabled = false;
+        dialog_edit_ar_meta.disabled = false;
+        dialog_edit_ar_koment.disabled = false;
+        dialog_bt_ar_name.onclick = function() {knopka3()};
+        dialog_bt2_ar_name.onclick = function() {dialogRenameSelect()};
+        dialog_edit_ar_name.classList.remove("btgray");
+        dialog_edit_ar_meta.classList.remove("btgray");
+        dialog_edit_ar_koment.classList.remove("btgray");
+        dialog_bt_ar_name.classList.remove("btgray");
+        dialog_bt2_ar_name.classList.remove("btgray");
+        dialog_bt_ar_name0.style.display = "block";
+    }
+}
+
 
 
 function kartCosmetic(el, order){
     var i=0;
-    if (order){
+    (el === undefined) ? el = "" : {};//если не передали аргумент
+    (order === undefined) ? order = false : {};//если не передали аргумент
+
+    if (order){//если нет выделения
         while (document.querySelectorAll(".dialog_bt2")[i]){
             document.querySelectorAll(".dialog_bt2")[i].parentNode.parentNode.classList.remove("kartChek");
             //document.querySelectorAll(".dialog_bt2")[i].classList.add("btgray");
             i++
         }
+        el.classList.add("kartChek");//красная обводка
         dialog_bt_subar_add.style.display = "none";//прячем кнопку "Добавить в массив"
         dialogSelect.disabled = true;//деактивируем селект
-        el.classList.add("kartChek");//красная обводка
-    } else{//иначе делаем всё наоборот
+    } else{//если уже выделена карточка
         dialog_bt_subar_add.style.display = "block";
         dialogSelect.disabled = false;
-        el ? el.classList.remove("kartChek") : {};//если "" и нечего убирать
+        el ? el.classList.remove("kartChek") : {};//если "" то нечего убирать
+        selectKartI = "";//говорим что выделения карты более нет
     }
 }
 
@@ -274,7 +329,6 @@ function newEra(){
     while(kart_continer.childNodes[0]){
         kart_continer.childNodes[0].remove();
     }
-
     //отрисовываем новые карточки
     if (!selectedArray) return;
     while(selectedArray[2][i]){

@@ -182,12 +182,17 @@ overflow: auto;
 }
 
 .btgray{
-    -webkit-filter: grayscale(100%);
+/*    -webkit-filter: grayscale(100%);
     -ms-filter: grayscale(100%);
     -o-filter: grayscale(100%);
     filter: grayscale(100%);
     filter: grayscale(1);
-    filter: gray; /* IE 6-9 */
+    filter: gray;*/ /* IE 6-9 */
+    background-color: rgb(209, 209, 209);
+}
+
+.btgray:active{
+    background-color: rgb(209, 209, 209);
 }
 
 .dialog_bt2:active{
