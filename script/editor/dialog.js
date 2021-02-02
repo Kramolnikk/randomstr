@@ -150,7 +150,7 @@ function knopka5(){//кнопка "Применить изменения" (в к
     createClearKart();//создаём карту и вставляем в список
     arrayViuwer(array);
     selectedArray[2][selectKartI] = array.slice();//обработанные данные в массив
-    selectKartI = "";
+    selectKartI = "";//говорим что выбранной карты более нет
     kartCosmetic("", false);
     dialogCleaned();
 }
@@ -216,12 +216,20 @@ function dialogSelectComplite(){//кнопка "применить измене�
     postLoadColor();
 }
 
-
+var ar;
 function knopka4(el){//изменение карточки
     var array;
-    if (selectKartI != "" && selectKartI > -1) return;
-    //========== получаем целевой массив (ссылку) ==========
     el = el.parentNode.parentNode;//получаем узел карточки
+    if (selectKartI != "" && selectKartI > -1) return;
+
+    if (el.classList.contains("kartChek")) {
+        kartCosmetic(el, false);//обводка карт и деактивация кнопок
+        postLoadColor();
+        return
+    }
+    //}
+    //console.log(selectKartI);
+    //========== получаем целевой массив (ссылку) ==========
     for (var i=0; i < kart_continer.childNodes.length; i++){//ищем порядковый номер карточки
         if (kart_continer.childNodes[i] == el) {//сравниваем родительскую карточку с нашей
             array = selectedArray[2][i];//выделяем в array целевой массив
@@ -252,9 +260,10 @@ function kartCosmetic(el, order){
         dialog_bt_subar_add.style.display = "none";//прячем кнопку "Добавить в массив"
         dialogSelect.disabled = true;//деактивируем селект
         el.classList.add("kartChek");//красная обводка
-    } else{
-        dialog_bt_subar_add.style.display = "block";//прячем кнопку "Добавить в массив"
+    } else{//иначе делаем всё наоборот
+        dialog_bt_subar_add.style.display = "block";
         dialogSelect.disabled = false;
+        el ? el.classList.remove("kartChek") : {};//если "" и нечего убирать
     }
 }
 
